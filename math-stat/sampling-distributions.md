@@ -51,9 +51,9 @@ Unlike $m_2$, the divisor is $n-1$ rather than $n$; this makes $E(S_n^2) = \sigm
 For a random sample from a population with mean $\mu$, variance $\sigma^2$, and 4th central moment $\mu_4 = E(X_i - \mu)^4$:
 
 1. $E(\bar{X}_n) = \mu$
-2. $\displaystyle \operatorname{Var}(\bar{X}_n) = \frac{\sigma^2}{n}$
+2. $\displaystyle \mathrm{Var}(\bar{X}_n) = \frac{\sigma^2}{n}$
 3. $E(S_n^2) = \sigma^2$
-4. $\displaystyle \operatorname{Var}(S_n^2) = \frac{1}{n}\left(\mu_4 - \frac{n-3}{n-1}\sigma^4\right), \quad n > 1$
+4. $\displaystyle \mathrm{Var}(S_n^2) = \frac{1}{n}\left(\mu_4 - \frac{n-3}{n-1}\sigma^4\right), \quad n > 1$
 
 **Proof.**
 
@@ -63,7 +63,7 @@ $$E(\bar{X}_n) = \frac{1}{n}\sum_{i=1}^{n} E(X_i) = \frac{1}{n} n\mu = \mu \qqua
 
 **(2)**
 
-$$\operatorname{Var}(\bar{X}_n) = \frac{1}{n^2}\operatorname{Var}\left(\sum_{i=1}^{n} X_i\right) = \frac{1}{n^2}\sum_{i=1}^{n}\operatorname{Var}(X_i) = \frac{\sigma^2}{n} \qquad \text{(by independence)}$$
+$$\mathrm{Var}(\bar{X}_n) = \frac{1}{n^2}\mathrm{Var}\left(\sum_{i=1}^{n} X_i\right) = \frac{1}{n^2}\sum_{i=1}^{n}\mathrm{Var}(X_i) = \frac{\sigma^2}{n} \qquad \text{(by independence)}$$
 
 **(3)** Start from the identity
 
@@ -73,7 +73,7 @@ Taking expectations on both sides,
 
 $$E\left[\sum_{i=1}^{n}(X_i - \bar{X}_n)^2\right] = n\sigma^2 - n\cdot\frac{\sigma^2}{n} = (n-1)\sigma^2$$
 
-(by $E(X_i - \mu)^2 = \sigma^2$, $E(\bar{X}_n - \mu)^2 = \operatorname{Var}(\bar{X}_n)$)
+(by $E(X_i - \mu)^2 = \sigma^2$, $E(\bar{X}_n - \mu)^2 = \mathrm{Var}(\bar{X}_n)$)
 
 $$\therefore\; E(S_n^2) = \frac{1}{n-1}(n-1)\sigma^2 = \sigma^2$$
 
@@ -81,7 +81,7 @@ $$\therefore\; E(S_n^2) = \frac{1}{n-1}(n-1)\sigma^2 = \sigma^2$$
 
 $$W := (n-1)S_n^2 = \sum_{i=1}^{n} Y_i^2 - n\bar{Y}_n^2 \quad \text{(by the identity in (3))}, \qquad E(W) = (n-1)\sigma^2$$
 
-$$\operatorname{Var}(S_n^2) = \frac{\operatorname{Var}(W)}{(n-1)^2} = \frac{E(W^2) - [E(W)]^2}{(n-1)^2} = \frac{E(W^2)}{(n-1)^2} - \sigma^4$$
+$$\mathrm{Var}(S_n^2) = \frac{\mathrm{Var}(W)}{(n-1)^2} = \frac{E(W^2) - [E(W)]^2}{(n-1)^2} = \frac{E(W^2)}{(n-1)^2} - \sigma^4$$
 
 $$W^2 = \left(\sum_{i=1}^{n} Y_i^2\right)^2 - 2n\left(\sum_{i=1}^{n} Y_i^2\right)\bar{Y}_n^2 + n^2\bar{Y}_n^4$$
 
@@ -112,7 +112,7 @@ Dividing by $(n-1)^2$, subtracting $\sigma^4$, and putting the $\sigma^4$ term o
 
 $$\frac{n^2 - 2n + 3}{n(n-1)} - 1 = \frac{(n^2 - 2n + 3) - (n^2 - n)}{n(n-1)} = -\frac{n-3}{n(n-1)}$$
 
-$$\therefore\; \operatorname{Var}(S_n^2) = \frac{E(W^2)}{(n-1)^2} - \sigma^4 = \frac{\mu_4}{n} - \frac{n-3}{n(n-1)}\sigma^4 = \frac{1}{n}\left(\mu_4 - \frac{n-3}{n-1}\sigma^4\right) \qquad \blacksquare$$
+$$\therefore\; \mathrm{Var}(S_n^2) = \frac{E(W^2)}{(n-1)^2} - \sigma^4 = \frac{\mu_4}{n} - \frac{n-3}{n(n-1)}\sigma^4 = \frac{1}{n}\left(\mu_4 - \frac{n-3}{n-1}\sigma^4\right) \qquad \blacksquare$$
 
 ---
 
@@ -130,13 +130,13 @@ $$f_X(x) = \frac{1}{\Gamma(n/2)\,2^{n/2}}\, x^{n/2 - 1} e^{-x/2}, \quad x > 0 \t
 
 1. $M_X(t) = (1 - 2t)^{-n/2}$, $\; t < \tfrac{1}{2}$
 2. $E(X) = n$
-3. $\operatorname{Var}(X) = 2n$
+3. $\mathrm{Var}(X) = 2n$
 
 **Proof.** $\chi^2(n) = \mathrm{GAM}(n/2, 2)$ and the gamma mgf is $(1 - \theta t)^{-k}$, so putting $k = n/2$, $\theta = 2$,
 
 $$M_X(t) = (1 - 2t)^{-n/2} \qquad \text{(by the gamma mgf)}$$
 
-$$E(X) = k\theta = \frac{n}{2}\cdot 2 = n, \qquad \operatorname{Var}(X) = k\theta^2 = \frac{n}{2}\cdot 2^2 = 2n$$
+$$E(X) = k\theta = \frac{n}{2}\cdot 2 = n, \qquad \mathrm{Var}(X) = k\theta^2 = \frac{n}{2}\cdot 2^2 = 2n$$
 
 (by the gamma mean and variance) $\blacksquare$
 
@@ -213,7 +213,7 @@ $$\int_0^{\infty} y^{(n+m)/2-1}e^{-ay}\,dy = \frac{\Gamma[(n+m)/2]}{a^{(n+m)/2}}
 ### Theorem 3.2.5 — mean and variance of $F(n, m)$
 
 1. $\displaystyle E(X) = \frac{m}{m-2}$, $\; m > 2$
-2. $\displaystyle \operatorname{Var}(X) = \frac{2m^2(n + m - 2)}{n(m-2)^2(m-4)}$, $\; m > 4$
+2. $\displaystyle \mathrm{Var}(X) = \frac{2m^2(n + m - 2)}{n(m-2)^2(m-4)}$, $\; m > 4$
 
 **Proof.** $X = \frac{m}{n}\cdot\frac{U}{V}$, where $U$ and $1/V$ are independent and $E(1/V) = 1/(m-2)$ for $m > 2$, so
 
@@ -221,7 +221,7 @@ $$E(X) = \frac{m}{n}E(U)E\!\left(\frac{1}{V}\right) = \frac{m}{n}\cdot n\cdot\fr
 
 For the variance, $X^2 = \dfrac{m^2}{n^2}\cdot\dfrac{U^2}{V^2}$ and
 
-$$E(U^2) = \operatorname{Var}(U) + [E(U)]^2 = 2n + n^2 = n(n+2) \qquad \text{(by Theorem 3.2.1)}$$
+$$E(U^2) = \mathrm{Var}(U) + [E(U)]^2 = 2n + n^2 = n(n+2) \qquad \text{(by Theorem 3.2.1)}$$
 
 $$E\!\left(\frac{1}{V^2}\right) = \int_0^{\infty}\frac{1}{v^2}\cdot\frac{v^{m/2-1}e^{-v/2}}{\Gamma(m/2)2^{m/2}}\,dv = \frac{\Gamma(m/2 - 2)2^{m/2-2}}{\Gamma(m/2)2^{m/2}} = \frac{1}{(m-2)(m-4)}, \quad m > 4$$
 
@@ -229,7 +229,7 @@ $$E\!\left(\frac{1}{V^2}\right) = \int_0^{\infty}\frac{1}{v^2}\cdot\frac{v^{m/2-
 
 $$E(X^2) = \frac{m^2}{n^2}E(U^2)E\!\left(\frac{1}{V^2}\right) = \frac{m^2(n+2)}{n(m-2)(m-4)} \qquad \text{(by independence)}$$
 
-$$\operatorname{Var}(X) = E(X^2) - [E(X)]^2 = \frac{m^2(n+2)}{n(m-2)(m-4)} - \frac{m^2}{(m-2)^2} = \frac{2m^2(n + m - 2)}{n(m-2)^2(m-4)}$$
+$$\mathrm{Var}(X) = E(X^2) - [E(X)]^2 = \frac{m^2(n+2)}{n(m-2)(m-4)} - \frac{m^2}{(m-2)^2} = \frac{2m^2(n + m - 2)}{n(m-2)^2(m-4)}$$
 
 (numerator: $(n+2)(m-2) - n(m-4) = 2(n + m - 2)$) $\blacksquare$
 
@@ -288,19 +288,19 @@ $$P(X \leq -1.812) = 1 - P(X \leq 1.812) = 0.05$$
 ### Theorem 3.2.7 — mean and variance of $t(n)$
 
 1. $E(X) = 0$, $\; n > 1$
-2. $\displaystyle \operatorname{Var}(X) = \frac{n}{n-2}$, $\; n > 2$
+2. $\displaystyle \mathrm{Var}(X) = \frac{n}{n-2}$, $\; n > 2$
 
-**Proof.** $Z$ is symmetric about 0 and independent of $U$, so $X$ is symmetric about 0; for $n > 1$, $E|X| < \infty$ and hence $E(X) = 0$. Then $\operatorname{Var}(X) = E(X^2)$ and
+**Proof.** $Z$ is symmetric about 0 and independent of $U$, so $X$ is symmetric about 0; for $n > 1$, $E|X| < \infty$ and hence $E(X) = 0$. Then $\mathrm{Var}(X) = E(X^2)$ and
 
 $$X^2 = \frac{Z^2}{U/n} = nZ^2\cdot\frac{1}{U}, \qquad E(X^2) = nE(Z^2)E\!\left(\frac{1}{U}\right) \quad \text{(by independence)}$$
 
-$$E(Z^2) = \operatorname{Var}(Z) + [E(Z)]^2 = 1$$
+$$E(Z^2) = \mathrm{Var}(Z) + [E(Z)]^2 = 1$$
 
 $$E\!\left(\frac{1}{U}\right) = \frac{1}{\Gamma(n/2)2^{n/2}}\int_0^{\infty} u^{(n/2-1)-1}e^{-u/2}\,du = \frac{\Gamma(n/2 - 1)2^{n/2-1}}{\Gamma(n/2)2^{n/2}} = \frac{1}{n-2}, \quad n > 2$$
 
 (by the gamma integral $\int_0^{\infty} u^{a-1}e^{-u/2}\,du = \Gamma(a)2^a$ and $\Gamma(n/2) = (n/2 - 1)\Gamma(n/2 - 1)$)
 
-$$\therefore\; \operatorname{Var}(X) = E(X^2) = n\cdot 1\cdot\frac{1}{n-2} = \frac{n}{n-2} \qquad \blacksquare$$
+$$\therefore\; \mathrm{Var}(X) = E(X^2) = n\cdot 1\cdot\frac{1}{n-2} = \frac{n}{n-2} \qquad \blacksquare$$
 
 ### Corollary 3.2.2 — square of a t variable
 
@@ -368,9 +368,9 @@ Note that the deviations $X_i - \bar{X}_n$ are **not** independent, because of t
 
 $$\|Qx\|^2 = x^{\top}Q^{\top}Qx = x^{\top}x = \|x\|^2$$
 
-For an iid sample the covariance matrix is $\operatorname{Cov}(X) = \sigma^2 I$, so for $Y = QX$
+For an iid sample the covariance matrix is $\mathrm{Cov}(X) = \sigma^2 I$, so for $Y = QX$
 
-$$\operatorname{Cov}(Y) = Q\operatorname{Cov}(X)Q^{\top} = Q(\sigma^2 I)Q^{\top} = \sigma^2 QQ^{\top} = \sigma^2 I$$
+$$\mathrm{Cov}(Y) = Q\mathrm{Cov}(X)Q^{\top} = Q(\sigma^2 I)Q^{\top} = \sigma^2 QQ^{\top} = \sigma^2 I$$
 
 $Y$ is multivariate normal (a linear transformation of a multivariate normal), and with $\Sigma = \sigma^2 I$ the quadratic form in the exponent separates componentwise, so the joint density factors into its marginals: $Y_1, \dots, Y_n$ are mutually independent, and functions of disjoint index sets are independent.
 
@@ -460,7 +460,7 @@ $$\bar{X}_n \xrightarrow{p} \mu$$
 
 $$P[|\bar{X}_n - \mu| < \epsilon] \geq 1 - \frac{E(\bar{X}_n - \mu)^2}{\epsilon^2} = 1 - \frac{\sigma^2/n}{\epsilon^2} \longrightarrow 1 \quad (n \to \infty)$$
 
-(by Chebyshev's inequality and $E(\bar{X}_n - \mu)^2 = \operatorname{Var}(\bar{X}_n) = \sigma^2/n$, Theorem 3.1.1). $\blacksquare$
+(by Chebyshev's inequality and $E(\bar{X}_n - \mu)^2 = \mathrm{Var}(\bar{X}_n) = \sigma^2/n$, Theorem 3.1.1). $\blacksquare$
 
 ### Theorem 3.4.2 — convergence in probability of the sample variance
 
@@ -468,9 +468,9 @@ If $E(X_1^4) < \infty$, then
 
 $$S_n^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i - \bar{X}_n)^2 \xrightarrow{p} \sigma^2$$
 
-**Proof.** From Theorem 3.1.1, $E(S_n^2) = \sigma^2$ and $\operatorname{Var}(S_n^2) = \frac{1}{n}\left(\mu_4 - \frac{n-3}{n-1}\sigma^4\right)$, and $E(X_1^4) < \infty$ means $\mu_4 < \infty$. For any $\epsilon > 0$,
+**Proof.** From Theorem 3.1.1, $E(S_n^2) = \sigma^2$ and $\mathrm{Var}(S_n^2) = \frac{1}{n}\left(\mu_4 - \frac{n-3}{n-1}\sigma^4\right)$, and $E(X_1^4) < \infty$ means $\mu_4 < \infty$. For any $\epsilon > 0$,
 
-$$P[|S_n^2 - \sigma^2| \geq \epsilon] \leq \frac{\operatorname{Var}(S_n^2)}{\epsilon^2} = \frac{1}{n\epsilon^2}\left(\mu_4 - \frac{n-3}{n-1}\sigma^4\right) \longrightarrow 0 \qquad \text{(by Chebyshev's inequality)}$$
+$$P[|S_n^2 - \sigma^2| \geq \epsilon] \leq \frac{\mathrm{Var}(S_n^2)}{\epsilon^2} = \frac{1}{n\epsilon^2}\left(\mu_4 - \frac{n-3}{n-1}\sigma^4\right) \longrightarrow 0 \qquad \text{(by Chebyshev's inequality)}$$
 
 since the bracket converges to $\mu_4 - \sigma^4$ while the factor $1/n$ vanishes. $\blacksquare$
 
@@ -498,7 +498,7 @@ For discrete variables the pgf may be used instead: if $\lim_n G_n(s) = G(s)$ fo
 
 For a random sample from a population with mean $\mu$ and variance $\sigma^2 < \infty$:
 
-$$Z_n = \frac{\sum_{i=1}^{n} X_i - E\left(\sum_{i=1}^{n} X_i\right)}{\sqrt{\operatorname{Var}\left(\sum_{i=1}^{n} X_i\right)}} = \frac{\sum_{i=1}^{n}(X_i - \mu)}{\sqrt{n}\,\sigma} \xrightarrow{d} N(0,1)$$
+$$Z_n = \frac{\sum_{i=1}^{n} X_i - E\left(\sum_{i=1}^{n} X_i\right)}{\sqrt{\mathrm{Var}\left(\sum_{i=1}^{n} X_i\right)}} = \frac{\sum_{i=1}^{n}(X_i - \mu)}{\sqrt{n}\,\sigma} \xrightarrow{d} N(0,1)$$
 
 ### Lemma 3.4.1 — Lagrange form of the first-order remainder
 
@@ -553,19 +553,19 @@ $$\lim_{n\to\infty} M_{Z_n}(t) = \exp(t^2/2) \qquad \text{(by the exponential li
 
 The CLT requires only a finite mean and variance, whatever the shape of the population; it fails for e.g. the Cauchy distribution, which has no mean. Equivalently
 
-$$Z_n = \frac{\bar{X}_n - E(\bar{X}_n)}{\sqrt{\operatorname{Var}(\bar{X}_n)}} = \frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} \tag{3.8}$$
+$$Z_n = \frac{\bar{X}_n - E(\bar{X}_n)}{\sqrt{\mathrm{Var}(\bar{X}_n)}} = \frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} \tag{3.8}$$
 
 so the CLT approximates the distribution of $\bar{X}_n$ or of $\sum X_i$ by a normal distribution.
 
 ### Example 3.4.2 — normal approximation, continuous case
 
-For a random sample from $U(0,1)$, $E(X_i) = \tfrac{1}{2}$ and $\operatorname{Var}(X_i) = \tfrac{1}{12}$, so $\sum X_i \approx N(n/2,\; n/12)$ and
+For a random sample from $U(0,1)$, $E(X_i) = \tfrac{1}{2}$ and $\mathrm{Var}(X_i) = \tfrac{1}{12}$, so $\sum X_i \approx N(n/2,\; n/12)$ and
 
 $$P\left[a \leq \sum_{i=1}^{n} X_i \leq b\right] \approx \Phi\left[\frac{b - n/2}{\sqrt{n/12}}\right] - \Phi\left[\frac{a - n/2}{\sqrt{n/12}}\right] \qquad \text{(by Theorem 3.4.4)}$$
 
 ### Example 3.4.3 — normal approximation, binomial case
 
-$X \sim B(n, p)$ has the same distribution as $\sum_{i=1}^{n} X_i$ for independent Bernoulli($p$) variables, with $E(X_i) = p$ and $\operatorname{Var}(X_i) = pq$, $q = 1 - p$. Hence $\left(\sum X_i - np\right)/\sqrt{npq}$ is approximately $N(0,1)$ and
+$X \sim B(n, p)$ has the same distribution as $\sum_{i=1}^{n} X_i$ for independent Bernoulli($p$) variables, with $E(X_i) = p$ and $\mathrm{Var}(X_i) = pq$, $q = 1 - p$. Hence $\left(\sum X_i - np\right)/\sqrt{npq}$ is approximately $N(0,1)$ and
 
 $$P[a \leq X \leq b] \approx \Phi\left[\frac{b - np}{\sqrt{npq}}\right] - \Phi\left[\frac{a - np}{\sqrt{npq}}\right] \qquad \text{(by Theorem 3.4.4)}$$
 
@@ -634,7 +634,7 @@ $$\sqrt{n}\left(g(\bar{X}_n) - g(\theta)\right) = g'(\tilde{\theta})\cdot\sqrt{n
 
 ### Example 3.4.6 — variance stabilizing transformation
 
-For a random sample from Poisson($\lambda$), $E(X_i) = \operatorname{Var}(X_i) = \lambda$, so
+For a random sample from Poisson($\lambda$), $E(X_i) = \mathrm{Var}(X_i) = \lambda$, so
 
 $$Z_n = \sqrt{n}(\bar{X}_n - \lambda) \xrightarrow{d} N(0, \lambda) \qquad \text{(by Theorem 3.4.4)}$$
 
@@ -652,9 +652,9 @@ $$g(x) \approx g(\theta) + \sum_{i=1}^{k} g_i'(\theta)(x_i - \theta_i), \qquad g
 
 $$E\,g(X) \approx g(\theta) + \sum_{i=1}^{k} g_i'(\theta)E(X_i - \theta_i) = g(\theta) \qquad \text{(by } E(X_i - \theta_i) = 0) \tag{3.9}$$
 
-$$\operatorname{Var} g(X) \approx \sum_{i=1}^{k}[g_i'(\theta)]^2\operatorname{Var}(X_i) + 2\sum_{i > j} g_i'(\theta)g_j'(\theta)\operatorname{Cov}(X_i, X_j) \tag{3.10}$$
+$$\mathrm{Var} g(X) \approx \sum_{i=1}^{k}[g_i'(\theta)]^2\mathrm{Var}(X_i) + 2\sum_{i > j} g_i'(\theta)g_j'(\theta)\mathrm{Cov}(X_i, X_j) \tag{3.10}$$
 
-(3.10) follows by expanding $\operatorname{Var} g(X) \approx E\left[\left(\sum_i g_i'(\theta)(X_i - \theta_i)\right)^2\right]$.
+(3.10) follows by expanding $\mathrm{Var} g(X) \approx E\left[\left(\sum_i g_i'(\theta)(X_i - \theta_i)\right)^2\right]$.
 
 ### Example 3.4.7 — ratio-type estimator
 
@@ -664,9 +664,9 @@ $$\frac{\partial}{\partial \mu_X}g = \frac{1}{\mu_Y}, \qquad \frac{\partial}{\pa
 
 $$E\left(\frac{\bar{X}_n}{\bar{Y}_m}\right) \approx \frac{\mu_X}{\mu_Y} \qquad \text{(by (3.9))}$$
 
-$$\operatorname{Var}\left(\frac{\bar{X}_n}{\bar{Y}_m}\right) \approx \frac{1}{\mu_Y^2}\operatorname{Var}(\bar{X}_n) + \frac{\mu_X^2}{\mu_Y^4}\operatorname{Var}(\bar{Y}_m) - 2\frac{\mu_X}{\mu_Y^3}\operatorname{Cov}(\bar{X}_n, \bar{Y}_m) \qquad \text{(by (3.10))}$$
+$$\mathrm{Var}\left(\frac{\bar{X}_n}{\bar{Y}_m}\right) \approx \frac{1}{\mu_Y^2}\mathrm{Var}(\bar{X}_n) + \frac{\mu_X^2}{\mu_Y^4}\mathrm{Var}(\bar{Y}_m) - 2\frac{\mu_X}{\mu_Y^3}\mathrm{Cov}(\bar{X}_n, \bar{Y}_m) \qquad \text{(by (3.10))}$$
 
-$$= \left(\frac{\mu_X}{\mu_Y}\right)^2\left(\frac{\operatorname{Var}(\bar{X}_n)}{\mu_X^2} + \frac{\operatorname{Var}(\bar{Y}_m)}{\mu_Y^2} - 2\frac{\operatorname{Cov}(\bar{X}_n, \bar{Y}_m)}{\mu_X \mu_Y}\right)$$
+$$= \left(\frac{\mu_X}{\mu_Y}\right)^2\left(\frac{\mathrm{Var}(\bar{X}_n)}{\mu_X^2} + \frac{\mathrm{Var}(\bar{Y}_m)}{\mu_Y^2} - 2\frac{\mathrm{Cov}(\bar{X}_n, \bar{Y}_m)}{\mu_X \mu_Y}\right)$$
 
 ---
 
