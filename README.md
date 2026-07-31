@@ -1,15 +1,13 @@
 # stat-notes
 
-통계학 정리 노트. 수식은 GitHub 마크다운의 LaTeX 렌더링($`...`$, `$$...$$`)을 사용합니다.
+수리통계학 및 통계적 방법론 자기학습 노트.
+손글씨 노트를 스캔해 LaTeX으로 조판했으며, 조판 과정에 AI 도구를 사용했습니다.
 
-## math-stat
+## 수리통계
+- [표본분포와 근사](math-stat/sampling-distributions.md) — 카이제곱·t·F 분포 유도, X̄과 S²의 독립성, LLN/CLT
 
-수리통계학
+## 회귀분석
+- 작성 중
 
-| | 내용 |
-|---|---|
-| [ch03](math-stat/ch03.md) | Sampling Distributions and Their Approximations |
-
-## regression
-
-회귀분석
+---
+교재: 송성주·전명식, 『수리통계학』 제5판, 자유아카데미, 2020
