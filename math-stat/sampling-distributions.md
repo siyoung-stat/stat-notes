@@ -124,7 +124,7 @@ $$\therefore\; \mathrm{Var}(S_n^2) = \frac{E(W^2)}{(n-1)^2} - \sigma^4 = \frac{\
 
 The gamma distribution with parameters $(k, \theta) = (n/2, 2)$ is called the **chi-squared distribution** with $n$ degrees of freedom, written $X \sim \chi^2(n)$.
 
-$$f_X(x) = \frac{1}{\Gamma(n/2)\,2^{n/2}}\, x^{n/2 - 1} e^{-x/2}, \quad x > 0 \tag{3.1}$$
+$$f_X(x) = \frac{1}{\Gamma(n/2)\,2^{n/2}}\, x^{n/2 - 1} e^{-x/2}, \quad x > 0 \qquad (3.1)$$
 
 ### <a name="thm-3-2-1"></a>Theorem 3.2.1 — mgf, mean, variance of $\chi^2(n)$
 
@@ -158,7 +158,12 @@ $Z \sim N(0,1) \;\Rightarrow\; Y = Z^2 \sim \chi^2(1)$.
 
 **Proof.**
 
-$$M_{Z^2}(t) = E(e^{tZ^2}) = \int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{tz^2 - z^2/2}\,dz = \int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{-z^2(1-2t)/2}\,dz = (1 - 2t)^{-1/2}, \quad t < \tfrac{1}{2}$$
+$$
+\begin{aligned}
+M_{Z^2}(t) = E(e^{tZ^2}) &= \int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{tz^2 - z^2/2}\,dz = \int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{-z^2(1-2t)/2}\,dz \\[6pt]
+&= (1 - 2t)^{-1/2}, \quad t < \tfrac{1}{2}
+\end{aligned}
+$$
 
 (by the Gaussian integral). This is the mgf of $\chi^2(1)$, hence the claim (by uniqueness of the mgf). $\blacksquare$
 
@@ -182,11 +187,11 @@ $$\sum_{i=1}^{n}\frac{(X_i - \mu)^2}{\sigma^2} \;\sim\; \chi^2(n)$$
 
 For independent $U \sim \chi^2(n)$ and $V \sim \chi^2(m)$, the distribution of
 
-$$X = \frac{U/n}{V/m} \tag{3.2}$$
+$$X = \frac{U/n}{V/m} \qquad (3.2)$$
 
 is the **F distribution** with degrees of freedom $(n, m)$, written $X \sim F(n, m)$, with density
 
-$$f_X(x) = \frac{\Gamma[(n+m)/2]}{\Gamma(n/2)\Gamma(m/2)}\left(\frac{n}{m}\right)^{n/2}\frac{x^{(n-2)/2}}{[1 + nx/m]^{(n+m)/2}}, \quad x > 0 \tag{3.3}$$
+$$f_X(x) = \frac{\Gamma[(n+m)/2]}{\Gamma(n/2)\Gamma(m/2)}\left(\frac{n}{m}\right)^{n/2}\frac{x^{(n-2)/2}}{[1 + nx/m]^{(n+m)/2}}, \quad x > 0 \qquad (3.3)$$
 
 **Derivation of (3.3).** Bivariate change of variables: for a one-to-one map with inverse $u = g(x,y)$, $v = h(x,y)$,
 
@@ -223,7 +228,12 @@ For the variance, $X^2 = \dfrac{m^2}{n^2}\cdot\dfrac{U^2}{V^2}$ and
 
 $$E(U^2) = \mathrm{Var}(U) + [E(U)]^2 = 2n + n^2 = n(n+2) \qquad \text{(by Theorem 3.2.1)}$$
 
-$$E\!\left(\frac{1}{V^2}\right) = \int_0^{\infty}\frac{1}{v^2}\cdot\frac{v^{m/2-1}e^{-v/2}}{\Gamma(m/2)2^{m/2}}\,dv = \frac{\Gamma(m/2 - 2)2^{m/2-2}}{\Gamma(m/2)2^{m/2}} = \frac{1}{(m-2)(m-4)}, \quad m > 4$$
+$$
+\begin{aligned}
+E\!\left(\frac{1}{V^2}\right) &= \int_0^{\infty}\frac{1}{v^2}\cdot\frac{v^{m/2-1}e^{-v/2}}{\Gamma(m/2)2^{m/2}}\,dv \\[6pt]
+&= \frac{\Gamma(m/2 - 2)2^{m/2-2}}{\Gamma(m/2)2^{m/2}} = \frac{1}{(m-2)(m-4)}, \quad m > 4
+\end{aligned}
+$$
 
 (by the gamma integral and $\Gamma(m/2) = (m/2 - 1)(m/2 - 2)\Gamma(m/2 - 2)$)
 
@@ -237,7 +247,7 @@ $$\mathrm{Var}(X) = E(X^2) - [E(X)]^2 = \frac{m^2(n+2)}{n(m-2)(m-4)} - \frac{m^2
 
 $X \sim F(n, m) \;\Rightarrow\; 1/X \sim F(m, n)$, since $1/X = \dfrac{V/m}{U/n}$. Hence for upper percentiles
 
-$$\frac{1}{F_{\alpha}(n, m)} = F_{1-\alpha}(m, n) \tag{3.4}$$
+$$\frac{1}{F_{\alpha}(n, m)} = F_{1-\alpha}(m, n) \qquad (3.4)$$
 
 so the lower part of the F table need not be tabulated.
 
@@ -253,11 +263,11 @@ $$a = F_{0.99}(5,10) = \frac{1}{F_{0.01}(10,5)} = \frac{1}{10.1} = 0.099 \qquad 
 
 For $Z \sim N(0,1)$ and independent $U \sim \chi^2(k)$, the distribution of
 
-$$X = \frac{Z}{\sqrt{U/k}} \tag{3.5}$$
+$$X = \frac{Z}{\sqrt{U/k}} \qquad (3.5)$$
 
 is the **t distribution** with $k$ degrees of freedom, written $X \sim t(k)$, with density
 
-$$f_X(x) = \frac{\Gamma[(k+1)/2]}{\Gamma(k/2)\sqrt{k\pi}}\cdot\frac{1}{(1 + x^2/k)^{(k+1)/2}}, \quad -\infty < x < \infty \tag{3.6}$$
+$$f_X(x) = \frac{\Gamma[(k+1)/2]}{\Gamma(k/2)\sqrt{k\pi}}\cdot\frac{1}{(1 + x^2/k)^{(k+1)/2}}, \quad -\infty < x < \infty \qquad (3.6)$$
 
 **Derivation of (3.6).** The same bivariate change of variables, with auxiliary variable $W = U$.
 
@@ -541,7 +551,12 @@ $$m(t) = m(0) + m'(0)t + \frac{m''(\xi)t^2}{2} = 1 + \frac{\sigma^2 t^2}{2} + \f
 
 **(3)** Substituting $t/(\sqrt{n}\sigma)$,
 
-$$M_{Z_n}(t) = \prod_{i=1}^{n} M_{X_i - \mu}\left(\frac{t}{\sqrt{n}\sigma}\right) = \left[m\left(\frac{t}{\sqrt{n}\sigma}\right)\right]^n = \left[1 + \frac{t^2}{2n} + \frac{[m''(\xi) - \sigma^2]t^2}{2n\sigma^2}\right]^n, \qquad 0 < \xi < \frac{t}{\sqrt{n}\sigma}$$
+$$
+\begin{aligned}
+M_{Z_n}(t) &= \prod_{i=1}^{n} M_{X_i - \mu}\left(\frac{t}{\sqrt{n}\sigma}\right) = \left[m\left(\frac{t}{\sqrt{n}\sigma}\right)\right]^n \\[6pt]
+&= \left[1 + \frac{t^2}{2n} + \frac{[m''(\xi) - \sigma^2]t^2}{2n\sigma^2}\right]^n, \qquad 0 < \xi < \frac{t}{\sqrt{n}\sigma}
+\end{aligned}
+$$
 
 (by the mgf of an independent sum)
 
@@ -553,7 +568,7 @@ $$\lim_{n\to\infty} M_{Z_n}(t) = \exp(t^2/2) \qquad \text{(by the exponential li
 
 The CLT requires only a finite mean and variance, whatever the shape of the population; it fails for e.g. the Cauchy distribution, which has no mean. Equivalently
 
-$$Z_n = \frac{\bar{X}_n - E(\bar{X}_n)}{\sqrt{\mathrm{Var}(\bar{X}_n)}} = \frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} \tag{3.8}$$
+$$Z_n = \frac{\bar{X}_n - E(\bar{X}_n)}{\sqrt{\mathrm{Var}(\bar{X}_n)}} = \frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}} \qquad (3.8)$$
 
 so the CLT approximates the distribution of $\bar{X}_n$ or of $\sum X_i$ by a normal distribution.
 
@@ -622,7 +637,12 @@ $$\sqrt{n}\left(g(\bar{X}_n) - g(\theta)\right) \xrightarrow{d} N\!\left(0,\; \s
 
 **Proof.** For some $\tilde{\theta}$ between $\bar{X}_n$ and $\theta$,
 
-$$g'(\tilde{\theta}) = \frac{g(\bar{X}_n) - g(\theta)}{\bar{X}_n - \theta} \quad \Longleftrightarrow \quad g(\bar{X}_n) = g'(\tilde{\theta})(\bar{X}_n - \theta) + g(\theta) \qquad \text{(by the mean value theorem)}$$
+$$
+\begin{aligned}
+g'(\tilde{\theta}) = \frac{g(\bar{X}_n) - g(\theta)}{\bar{X}_n - \theta} \quad &\Longleftrightarrow \quad g(\bar{X}_n) = g'(\tilde{\theta})(\bar{X}_n - \theta) + g(\theta) \\[6pt]
+&\text{(by the mean value theorem)}
+\end{aligned}
+$$
 
 $$\bar{X}_n - \theta = \frac{1}{\sqrt{n}}\cdot\sqrt{n}(\bar{X}_n - \theta) \xrightarrow{d} 0\cdot N(0,\sigma^2) = 0 \qquad \text{(by Theorem 3.4.5(2))}$$
 
@@ -650,9 +670,9 @@ For a random vector $X = (X_1, \dots, X_k)$ with $E(X) = \theta = (\theta_1, \do
 
 $$g(x) \approx g(\theta) + \sum_{i=1}^{k} g_i'(\theta)(x_i - \theta_i), \qquad g_i'(\theta) = \left.\frac{\partial}{\partial x_i}g(x)\right|_{x = \theta} \qquad \text{(by Taylor series)}$$
 
-$$E\,g(X) \approx g(\theta) + \sum_{i=1}^{k} g_i'(\theta)E(X_i - \theta_i) = g(\theta) \qquad \text{(by } E(X_i - \theta_i) = 0) \tag{3.9}$$
+$$E\,g(X) \approx g(\theta) + \sum_{i=1}^{k} g_i'(\theta)E(X_i - \theta_i) = g(\theta) \qquad \text{(by } E(X_i - \theta_i) = 0) \qquad (3.9)$$
 
-$$\mathrm{Var} g(X) \approx \sum_{i=1}^{k}[g_i'(\theta)]^2\mathrm{Var}(X_i) + 2\sum_{i > j} g_i'(\theta)g_j'(\theta)\mathrm{Cov}(X_i, X_j) \tag{3.10}$$
+$$\mathrm{Var} g(X) \approx \sum_{i=1}^{k}[g_i'(\theta)]^2\mathrm{Var}(X_i) + 2\sum_{i > j} g_i'(\theta)g_j'(\theta)\mathrm{Cov}(X_i, X_j) \qquad (3.10)$$
 
 (3.10) follows by expanding $\mathrm{Var} g(X) \approx E\left[\left(\sum_i g_i'(\theta)(X_i - \theta_i)\right)^2\right]$.
 
@@ -664,7 +684,12 @@ $$\frac{\partial}{\partial \mu_X}g = \frac{1}{\mu_Y}, \qquad \frac{\partial}{\pa
 
 $$E\left(\frac{\bar{X}_n}{\bar{Y}_m}\right) \approx \frac{\mu_X}{\mu_Y} \qquad \text{(by (3.9))}$$
 
-$$\mathrm{Var}\left(\frac{\bar{X}_n}{\bar{Y}_m}\right) \approx \frac{1}{\mu_Y^2}\mathrm{Var}(\bar{X}_n) + \frac{\mu_X^2}{\mu_Y^4}\mathrm{Var}(\bar{Y}_m) - 2\frac{\mu_X}{\mu_Y^3}\mathrm{Cov}(\bar{X}_n, \bar{Y}_m) \qquad \text{(by (3.10))}$$
+$$
+\begin{aligned}
+\mathrm{Var}\left(\frac{\bar{X}_n}{\bar{Y}_m}\right) &\approx \frac{1}{\mu_Y^2}\mathrm{Var}(\bar{X}_n) + \frac{\mu_X^2}{\mu_Y^4}\mathrm{Var}(\bar{Y}_m) \\[6pt]
+&\quad - 2\frac{\mu_X}{\mu_Y^3}\mathrm{Cov}(\bar{X}_n, \bar{Y}_m) \qquad \text{(by (3.10))}
+\end{aligned}
+$$
 
 $$= \left(\frac{\mu_X}{\mu_Y}\right)^2\left(\frac{\mathrm{Var}(\bar{X}_n)}{\mu_X^2} + \frac{\mathrm{Var}(\bar{Y}_m)}{\mu_Y^2} - 2\frac{\mathrm{Cov}(\bar{X}_n, \bar{Y}_m)}{\mu_X \mu_Y}\right)$$
 
@@ -676,13 +701,13 @@ $$= \left(\frac{\mu_X}{\mu_Y}\right)^2\left(\frac{\mathrm{Var}(\bar{X}_n)}{\mu_X
 
 The random sample $X_1, \dots, X_n$ arranged in increasing order:
 
-$$X_{(1)} \leq X_{(2)} \leq \cdots \leq X_{(n)} \tag{3.11}$$
+$$X_{(1)} \leq X_{(2)} \leq \cdots \leq X_{(n)} \qquad (3.11)$$
 
 ### <a name="thm-3-5-1"></a>Theorem 3.5.1 — joint density of the order statistics
 
 For continuous $f$,
 
-$$g(x_{(1)}, \dots, x_{(n)}) = \begin{cases} n!\, f(x_{(1)})f(x_{(2)})\cdots f(x_{(n)}), & x_{(1)} < x_{(2)} < \cdots < x_{(n)} \\[4pt] 0, & \text{otherwise} \end{cases} \tag{3.12}$$
+$$g(x_{(1)}, \dots, x_{(n)}) = \begin{cases} n!\, f(x_{(1)})f(x_{(2)})\cdots f(x_{(n)}), & x_{(1)} < x_{(2)} < \cdots < x_{(n)} \\[4pt] 0, & \text{otherwise} \end{cases} \qquad (3.12)$$
 
 **Proof.** Sorting is not one-to-one: $n!$ different samples map to the same ordered vector, e.g. all $3! = 6$ permutations of $(5, 1, 3)$ map to $(1, 3, 5)$, so the change-of-variable formula $f_Y(y) = f_X(g^{-1}(y))|J|$ cannot be applied directly.
 
@@ -712,7 +737,12 @@ and 0 otherwise.
 
 By the same argument, for $x_{(i)} < x_{(j)}$,
 
-$$f_{X_{(i)}, X_{(j)}}(x_{(i)}, x_{(j)}) = \frac{n!}{(i-1)!\,(j-i-1)!\,(n-j)!}[F(x_{(i)})]^{i-1}f(x_{(i)})\left[F(x_{(j)}) - F(x_{(i)})\right]^{j-i-1}f(x_{(j)})[1 - F(x_{(j)})]^{n-j}$$
+$$
+\begin{aligned}
+f_{X_{(i)}, X_{(j)}}(x_{(i)}, x_{(j)}) = \frac{n!}{(i-1)!\,(j-i-1)!\,(n-j)!} &[F(x_{(i)})]^{i-1}f(x_{(i)}) \\[6pt]
+&\times \left[F(x_{(j)}) - F(x_{(i)})\right]^{j-i-1}f(x_{(j)})[1 - F(x_{(j)})]^{n-j}
+\end{aligned}
+$$
 
 ### <a name="thm-3-5-3"></a>Theorem 3.5.3 — sample minimum and sample maximum
 
@@ -724,9 +754,9 @@ $$G_n(x) = P[X_{(n)} \leq x] = P[\text{all } X_i \leq x] = [F(x)]^n$$
 
 Differentiating in the continuous case,
 
-$$f_{X_{(1)}}(x) = \frac{d}{dx}G_1(x) = n[1 - F(x)]^{n-1}f(x) \tag{3.13}$$
+$$f_{X_{(1)}}(x) = \frac{d}{dx}G_1(x) = n[1 - F(x)]^{n-1}f(x) \qquad (3.13)$$
 
-$$f_{X_{(n)}}(x) = \frac{d}{dx}G_n(x) = n[F(x)]^{n-1}f(x) \tag{3.14}$$
+$$f_{X_{(n)}}(x) = \frac{d}{dx}G_n(x) = n[F(x)]^{n-1}f(x) \qquad (3.14)$$
 
 ### <a name="ex-3-5-2"></a>Example 3.5.2 — minimum of an exponential sample
 
