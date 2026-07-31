@@ -1,13 +1,15 @@
-# Chapter 3. Sampling Distributions and Their Approximations
+# Sampling Distributions and Their Approximations
+
+> 송성주·전명식, 『수리통계학』 제5판(자유아카데미, 2020) 3장 학습 노트
 
 ## 3.1 Population and Sample
 
-### Definition 3.1.1 (Def 3.1) — population, sample
+### Definition 3.1.1 — population, sample
 
 - **population**: the totality of objects under study
 - **sample**: the part of the population actually observed
 
-### Definition 3.1.2 (Def 3.2) — random sample
+### Definition 3.1.2 — random sample
 
 $X_1, \dots, X_n$ is a random sample of size $n$ from population density $f$ if the joint density factors into the product of $f$.
 
@@ -15,24 +17,24 @@ $$f_{X_1,\dots,X_n}(x_1, \dots, x_n) = f(x_1)f(x_2)\cdots f(x_n) = \prod_{i=1}^{
 
 That is, the $X_i$ are **iid** (independent and identically distributed).
 
-### Example 3.1.1 (Ex 3.1) — Bernoulli population
+### Example 3.1.1 — Bernoulli population
 
 $f(x) = p^x q^{1-x}$, $x = 0, 1$, $p + q = 1$, $n = 10$:
 
 $$f_{X_1,\dots,X_{10}}(x_1, \dots, x_{10}) = \prod_{i=1}^{10} p^{x_i} q^{1-x_i} = p^{\sum x_i} q^{10 - \sum x_i} \qquad \text{(by independence)}$$
 
-### Definition 3.1.3 (Def 3.3) — statistic
+### Definition 3.1.3 — statistic
 
 A **statistic** is a function $T = T(X_1, \dots, X_n)$ of the random sample that contains no unknown parameter. Being a function of random variables, $T$ is itself a random variable.
 
-### Example 3.1.2 (Ex 3.2) — identifying a statistic
+### Example 3.1.2 — identifying a statistic
 
 A function that depends on an unknown parameter $\theta$ is not a statistic.
 
 - statistic: $\displaystyle \bar{X}_n = \frac{1}{n}\sum_{i=1}^{n} X_i$, $\quad \max\{X_1, \dots, X_n\}$
 - not a statistic: $\bar{X}_n - \theta$, $\quad \max\{X_1/\theta, \dots, X_n/\theta\}$
 
-### Definition 3.1.4 (Def 3.4) — sample moments
+### Definition 3.1.4 — sample moments
 
 - $r$-th sample moment: $\displaystyle m_r' = \frac{1}{n}\sum_{i=1}^{n} X_i^r$
 - $r$-th central sample moment: $\displaystyle m_r = \frac{1}{n}\sum_{i=1}^{n} (X_i - \bar{X}_n)^r$
@@ -44,7 +46,7 @@ A function that depends on an unknown parameter $\theta$ is not a statistic.
 
 Unlike $m_2$, the divisor is $n-1$ rather than $n$; this makes $E(S_n^2) = \sigma^2$, so $S_n^2$ is an unbiased estimator of $\sigma^2$.
 
-### Theorem 3.1.1 (Thm 3.1) — moments of $\bar{X}_n$ and $S_n^2$
+### Theorem 3.1.1 — moments of $\bar{X}_n$ and $S_n^2$
 
 For a random sample from a population with mean $\mu$, variance $\sigma^2$, and 4th central moment $\mu_4 = E(X_i - \mu)^4$:
 
@@ -116,15 +118,15 @@ $$\therefore\; \operatorname{Var}(S_n^2) = \frac{E(W^2)}{(n-1)^2} - \sigma^4 = \
 
 ## 3.2 Distributions Related to the Normal
 
-### 3.2.1 Chi-squared distribution
+## 3.2.1 Chi-squared distribution
 
-#### Definition 3.2.1 — chi-squared distribution
+### Definition 3.2.1 — chi-squared distribution
 
 The gamma distribution with parameters $(k, \theta) = (n/2, 2)$ is called the **chi-squared distribution** with $n$ degrees of freedom, written $X \sim \chi^2(n)$.
 
 $$f_X(x) = \frac{1}{\Gamma(n/2)\,2^{n/2}}\, x^{n/2 - 1} e^{-x/2}, \quad x > 0 \tag{3.1}$$
 
-#### Theorem 3.2.1 (Thm 3.2) — mgf, mean, variance of $\chi^2(n)$
+### Theorem 3.2.1 — mgf, mean, variance of $\chi^2(n)$
 
 1. $M_X(t) = (1 - 2t)^{-n/2}$, $\; t < \tfrac{1}{2}$
 2. $E(X) = n$
@@ -138,7 +140,7 @@ $$E(X) = k\theta = \frac{n}{2}\cdot 2 = n, \qquad \operatorname{Var}(X) = k\thet
 
 (by the gamma mean and variance) $\blacksquare$
 
-#### Theorem 3.2.2 (Thm 3.3) — additivity of the chi-squared distribution
+### Theorem 3.2.2 — additivity of the chi-squared distribution
 
 For independent $X_i \sim \chi^2(k_i)$, $i = 1, \dots, n$:
 
@@ -150,7 +152,7 @@ $$M_Y(t) = \prod_{i=1}^{n}(1 - 2t)^{-k_i/2} = (1 - 2t)^{-\sum_i k_i/2} \qquad \t
 
 This is the mgf of $\chi^2\left(\sum_i k_i\right)$, hence the claim (by uniqueness of the mgf). $\blacksquare$
 
-#### Theorem 3.2.3 (Thm 3.4) — square of a standard normal
+### Theorem 3.2.3 — square of a standard normal
 
 $Z \sim N(0,1) \;\Rightarrow\; Y = Z^2 \sim \chi^2(1)$.
 
@@ -160,7 +162,7 @@ $$M_{Z^2}(t) = E(e^{tZ^2}) = \int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}e^{tz^2
 
 (by the Gaussian integral). This is the mgf of $\chi^2(1)$, hence the claim (by uniqueness of the mgf). $\blacksquare$
 
-#### Theorem 3.2.4 (Thm 3.5) — sum of squared standardized normals
+### Theorem 3.2.4 — sum of squared standardized normals
 
 For independent $X_i \sim N(\mu_i, \sigma_i^2)$, $i = 1, \dots, k$:
 
@@ -168,15 +170,15 @@ $$V = \sum_{i=1}^{k}\left(\frac{X_i - \mu_i}{\sigma_i}\right)^2 \;\sim\; \chi^2(
 
 **Proof.** The standardized variables $(X_i - \mu_i)/\sigma_i \sim N(0,1)$ are independent, each square is $\chi^2(1)$ (by Theorem 3.2.3), and the sum is $\chi^2(k)$ (by Theorem 3.2.2). $\blacksquare$
 
-#### Corollary 3.2.1
+### Corollary 3.2.1
 
 For a random sample from $N(\mu, \sigma^2)$:
 
 $$\sum_{i=1}^{n}\frac{(X_i - \mu)^2}{\sigma^2} \;\sim\; \chi^2(n)$$
 
-### 3.2.2 F distribution
+## 3.2.2 F distribution
 
-#### Definition 3.2.2 — F distribution
+### Definition 3.2.2 — F distribution
 
 For independent $U \sim \chi^2(n)$ and $V \sim \chi^2(m)$, the distribution of
 
@@ -208,7 +210,7 @@ $$\int_0^{\infty} y^{(n+m)/2-1}e^{-ay}\,dy = \frac{\Gamma[(n+m)/2]}{a^{(n+m)/2}}
 
 (by the gamma integral). The factor $2^{(n+m)/2}$ cancels, giving (3.3). $\blacksquare$
 
-#### Theorem 3.2.5 (Thm 3.6) — mean and variance of $F(n, m)$
+### Theorem 3.2.5 — mean and variance of $F(n, m)$
 
 1. $\displaystyle E(X) = \frac{m}{m-2}$, $\; m > 2$
 2. $\displaystyle \operatorname{Var}(X) = \frac{2m^2(n + m - 2)}{n(m-2)^2(m-4)}$, $\; m > 4$
@@ -231,7 +233,7 @@ $$\operatorname{Var}(X) = E(X^2) - [E(X)]^2 = \frac{m^2(n+2)}{n(m-2)(m-4)} - \fr
 
 (numerator: $(n+2)(m-2) - n(m-4) = 2(n + m - 2)$) $\blacksquare$
 
-#### Theorem 3.2.6 — reciprocal of an F variable, percentile relation
+### Theorem 3.2.6 — reciprocal of an F variable, percentile relation
 
 $X \sim F(n, m) \;\Rightarrow\; 1/X \sim F(m, n)$, since $1/X = \dfrac{V/m}{U/n}$. Hence for upper percentiles
 
@@ -239,15 +241,15 @@ $$\frac{1}{F_{\alpha}(n, m)} = F_{1-\alpha}(m, n) \tag{3.4}$$
 
 so the lower part of the F table need not be tabulated.
 
-#### Example 3.2.1 (Ex 3.3) — F percentile
+### Example 3.2.1 — F percentile
 
 $X \sim F(5, 10)$ and $P(X \leq a) = 0.01$:
 
 $$a = F_{0.99}(5,10) = \frac{1}{F_{0.01}(10,5)} = \frac{1}{10.1} = 0.099 \qquad \text{(by (3.4) and the F table)}$$
 
-### 3.2.3 t distribution
+## 3.2.3 t distribution
 
-#### Definition 3.2.3 — t distribution
+### Definition 3.2.3 — t distribution
 
 For $Z \sim N(0,1)$ and independent $U \sim \chi^2(k)$, the distribution of
 
@@ -277,13 +279,13 @@ $$\int_0^{\infty} w^{(k+1)/2-1}e^{-aw}\,dw = \Gamma[(k+1)/2]\cdot\frac{2^{(k+1)/
 
 The factor $2^{(k+1)/2}$ cancels, giving (3.6). $\blacksquare$
 
-#### Example 3.2.2 (Ex 3.4) — symmetry of the t distribution
+### Example 3.2.2 — symmetry of the t distribution
 
 $X \sim t(10)$ with $P(X \leq 1.812) = 0.95$ from the table; the density is symmetric about $x = 0$, so
 
 $$P(X \leq -1.812) = 1 - P(X \leq 1.812) = 0.05$$
 
-#### Theorem 3.2.7 (Thm 3.7) — mean and variance of $t(n)$
+### Theorem 3.2.7 — mean and variance of $t(n)$
 
 1. $E(X) = 0$, $\; n > 1$
 2. $\displaystyle \operatorname{Var}(X) = \frac{n}{n-2}$, $\; n > 2$
@@ -300,7 +302,7 @@ $$E\!\left(\frac{1}{U}\right) = \frac{1}{\Gamma(n/2)2^{n/2}}\int_0^{\infty} u^{(
 
 $$\therefore\; \operatorname{Var}(X) = E(X^2) = n\cdot 1\cdot\frac{1}{n-2} = \frac{n}{n-2} \qquad \blacksquare$$
 
-#### Corollary 3.2.2 — square of a t variable
+### Corollary 3.2.2 — square of a t variable
 
 $X \sim t(n) \;\Rightarrow\; X^2 \sim F(1, n)$.
 
@@ -310,7 +312,7 @@ $$X^2 = \frac{Z^2}{U/n} = \frac{Z^2/1}{U/n}$$
 
 with $Z^2 \sim \chi^2(1)$ (by Theorem 3.2.3) independent of $U \sim \chi^2(n)$, which is exactly the definition (3.2) of $F(1, n)$. $\blacksquare$
 
-#### Notation 3.2.1 — upper percentiles
+### Notation 3.2.1 — upper percentiles
 
 The point with upper-tail probability $\alpha$ is written as follows.
 
@@ -327,7 +329,7 @@ $$z_{1-\alpha} = -z_{\alpha}, \qquad t_{1-\alpha}(n) = -t_{\alpha}(n)$$
 
 ## 3.3 Sampling from a Normal Distribution
 
-### Theorem 3.3.1 (Thm 3.8) — sum of independent normals
+### Theorem 3.3.1 — sum of independent normals
 
 For independent $X_i \sim N(\mu_i, \sigma_i^2)$:
 
@@ -347,13 +349,13 @@ $$\bar{X}_n \;\sim\; N\left(\mu, \frac{\sigma^2}{n}\right)$$
 
 (by Theorem 3.3.1 and the linear transformation property of the normal)
 
-### Example 3.3.1 (Ex 3.5) — production time
+### Example 3.3.1 — production time
 
 $X \sim N(6, 2^2)$ independent, $n = 10$; then $\sum X_i \sim N(60, 40)$ (by Theorem 3.3.1) and
 
 $$P\left(\sum_{i=1}^{10} X_i \geq 70\right) = P\left[\frac{\sum X_i - 60}{\sqrt{40}} \geq \frac{70 - 60}{\sqrt{40}}\right] = 1 - \Phi(1.58) = 0.057$$
 
-### Theorem 3.3.2 (Thm 3.9) — independence of $\bar{X}_n$ and $S_n^2$, and the distribution of $S_n^2$
+### Theorem 3.3.2 — independence of $\bar{X}_n$ and $S_n^2$, and the distribution of $S_n^2$
 
 For a random sample of size $n$ from $N(\mu, \sigma^2)$:
 
@@ -400,13 +402,13 @@ This is the mgf of $\chi^2(n-1)$, hence $V_2 \sim \chi^2(n-1)$ (by uniqueness of
 
 Only the normal distribution keeps its components independent under rotation, so the independence of $\bar{X}_n$ and $S_n^2$ is a **characterization** of the normal distribution.
 
-### Example 3.3.2 (Ex 3.6) — probability for the sample variance
+### Example 3.3.2 — probability for the sample variance
 
 Continuing Example 3.3.1 ($n = 10$, $\sigma^2 = 4$), $9S_{10}^2/4 \sim \chi^2(9)$ (by Theorem 3.3.2(2)) and
 
 $$P(S_{10}^2 > 5) = P\left[\frac{9S_{10}^2}{4} > \frac{45}{4}\right] = P[\chi^2(9) > 11.25] \approx 0.259$$
 
-### Theorem 3.3.3 (Thm 3.10) — ratio of two sample variances
+### Theorem 3.3.3 — ratio of two sample variances
 
 Independent random samples of size $n$ from $N(\mu_X, \sigma_X^2)$ and of size $m$ from $N(\mu_Y, \sigma_Y^2)$:
 
@@ -418,7 +420,7 @@ $$F = \frac{[(n-1)S_X^2/\sigma_X^2]/(n-1)}{[(m-1)S_Y^2/\sigma_Y^2]/(m-1)} = \fra
 
 In particular, if $\sigma_X^2 = \sigma_Y^2$ then $S_X^2/S_Y^2 \sim F(n-1, m-1)$, which is the basis of the test for equality of two variances.
 
-### Theorem 3.3.4 (Thm 3.11) — studentized t statistic
+### Theorem 3.3.4 — studentized t statistic
 
 For a random sample from $N(\mu, \sigma^2)$, with $S_n = \sqrt{S_n^2}$:
 
@@ -440,15 +442,15 @@ $$T = \frac{Z}{\sqrt{U/(n-1)}} = \frac{\sqrt{n}(\bar{X}_n - \mu)/\sigma}{\sqrt{[
 
 ## 3.4 Law of Large Numbers and Central Limit Theorem
 
-### 3.4.1 Law of large numbers
+## 3.4.1 Law of large numbers
 
-#### Definition 3.4.1 (Def 3.5) — convergence in probability
+### Definition 3.4.1 — convergence in probability
 
 $$\lim_{n\to\infty} P(|X_n - X| \geq \epsilon) = 0 \;\text{ for every } \epsilon > 0 \quad \Longleftrightarrow \quad X_n \xrightarrow{p} X$$
 
 equivalently $\lim_{n\to\infty} P(|X_n - X| < \epsilon) = 1$.
 
-#### Theorem 3.4.1 (Thm 3.12) — law of large numbers
+### Theorem 3.4.1 — law of large numbers
 
 For a random sample from a population with mean $\mu < \infty$:
 
@@ -460,7 +462,7 @@ $$P[|\bar{X}_n - \mu| < \epsilon] \geq 1 - \frac{E(\bar{X}_n - \mu)^2}{\epsilon^
 
 (by Chebyshev's inequality and $E(\bar{X}_n - \mu)^2 = \operatorname{Var}(\bar{X}_n) = \sigma^2/n$, Theorem 3.1.1). $\blacksquare$
 
-#### Theorem 3.4.2 — convergence in probability of the sample variance
+### Theorem 3.4.2 — convergence in probability of the sample variance
 
 If $E(X_1^4) < \infty$, then
 
@@ -472,33 +474,33 @@ $$P[|S_n^2 - \sigma^2| \geq \epsilon] \leq \frac{\operatorname{Var}(S_n^2)}{\eps
 
 since the bracket converges to $\mu_4 - \sigma^4$ while the factor $1/n$ vanishes. $\blacksquare$
 
-#### Example 3.4.1 (Ex 3.7) — convergence of the sample proportion
+### Example 3.4.1 — convergence of the sample proportion
 
 For independent Bernoulli($p$) variables, $E(X_1) = p$, so
 
 $$\hat{p}_n = \frac{1}{n}\sum_{i=1}^{n} X_i \xrightarrow{p} p \qquad \text{(by Theorem 3.4.1)}$$
 
-### 3.4.2 Central limit theorem
+## 3.4.2 Central limit theorem
 
-#### Definition 3.4.2 (Def 3.6) — convergence in distribution
+### Definition 3.4.2 — convergence in distribution
 
 $$\lim_{n\to\infty} F_{X_n}(x) = F_X(x) \;\text{ at every continuity point of } F_X \quad \Longleftrightarrow \quad X_n \xrightarrow{d} X$$
 
 What converges is the **cdf**, not the random variable, and only at continuity points of $F_X$.
 
-#### Theorem 3.4.3 (Thm 3.13) — continuity theorem
+### Theorem 3.4.3 — continuity theorem
 
 If $\lim_{n\to\infty} M_n(t) = M(t)$ on an open interval $-h < t < h$ and $M(t)$ is the mgf of a distribution with cdf $F$, then $\lim_{n\to\infty} F_n(x) = F(x)$ at every continuity point of $F$.
 
 For discrete variables the pgf may be used instead: if $\lim_n G_n(s) = G(s)$ for $0 \leq s < 1$, then $\lim_n P(X_n = k) = a_k$ where $G(s) = \sum_k a_k s^k$.
 
-#### Theorem 3.4.4 (Thm 3.14) — central limit theorem
+### Theorem 3.4.4 — central limit theorem
 
 For a random sample from a population with mean $\mu$ and variance $\sigma^2 < \infty$:
 
 $$Z_n = \frac{\sum_{i=1}^{n} X_i - E\left(\sum_{i=1}^{n} X_i\right)}{\sqrt{\operatorname{Var}\left(\sum_{i=1}^{n} X_i\right)}} = \frac{\sum_{i=1}^{n}(X_i - \mu)}{\sqrt{n}\,\sigma} \xrightarrow{d} N(0,1)$$
 
-#### Lemma 3.4.1 — Lagrange form of the first-order remainder
+### Lemma 3.4.1 — Lagrange form of the first-order remainder
 
 Let $f$ be twice differentiable on an open interval containing $a$, and define the remainder as everything the first-order approximation misses:
 
@@ -525,7 +527,7 @@ Writing $\xi = \xi_2$ gives the claim. $\blacksquare$
 
 The point used below is that $\xi$ is trapped between $a$ and $x$, so $x \to a$ forces $\xi \to a$.
 
-#### Proof of Theorem 3.4.4 (assuming the mgf exists)
+**Proof of Theorem 3.4.4 (assuming the mgf exists).**
 
 **(1)** The mgf of the centered variable is common to all $i$:
 
@@ -555,19 +557,19 @@ $$Z_n = \frac{\bar{X}_n - E(\bar{X}_n)}{\sqrt{\operatorname{Var}(\bar{X}_n)}} = 
 
 so the CLT approximates the distribution of $\bar{X}_n$ or of $\sum X_i$ by a normal distribution.
 
-#### Example 3.4.2 (Ex 3.8) — normal approximation, continuous case
+### Example 3.4.2 — normal approximation, continuous case
 
 For a random sample from $U(0,1)$, $E(X_i) = \tfrac{1}{2}$ and $\operatorname{Var}(X_i) = \tfrac{1}{12}$, so $\sum X_i \approx N(n/2,\; n/12)$ and
 
 $$P\left[a \leq \sum_{i=1}^{n} X_i \leq b\right] \approx \Phi\left[\frac{b - n/2}{\sqrt{n/12}}\right] - \Phi\left[\frac{a - n/2}{\sqrt{n/12}}\right] \qquad \text{(by Theorem 3.4.4)}$$
 
-#### Example 3.4.3 (Ex 3.9) — normal approximation, binomial case
+### Example 3.4.3 — normal approximation, binomial case
 
 $X \sim B(n, p)$ has the same distribution as $\sum_{i=1}^{n} X_i$ for independent Bernoulli($p$) variables, with $E(X_i) = p$ and $\operatorname{Var}(X_i) = pq$, $q = 1 - p$. Hence $\left(\sum X_i - np\right)/\sqrt{npq}$ is approximately $N(0,1)$ and
 
 $$P[a \leq X \leq b] \approx \Phi\left[\frac{b - np}{\sqrt{npq}}\right] - \Phi\left[\frac{a - np}{\sqrt{npq}}\right] \qquad \text{(by Theorem 3.4.4)}$$
 
-#### Definition 3.4.3 — continuity correction
+### Definition 3.4.3 — continuity correction
 
 $P(X = k)$ is the area of a bar of width 1 centered at $k$, whereas the normal approximation integrates a curve; taking the integration limits at the integers $a, b$ (the bar centers) cuts off the outer halves of the two end bars. Extending each limit by $\tfrac{1}{2}$ covers the whole bars:
 
@@ -575,7 +577,7 @@ $$P\left(a - \tfrac{1}{2} \leq X \leq b + \tfrac{1}{2}\right)$$
 
 $$P[a \leq X \leq b] \approx \Phi\left[\frac{b + 1/2 - np}{\sqrt{npq}}\right] - \Phi\left[\frac{a - 1/2 - np}{\sqrt{npq}}\right]$$
 
-#### Example 3.4.4 — effect of the continuity correction
+### Example 3.4.4 — effect of the continuity correction
 
 $n = 50$, $p = 0.75$, $a = 36$, $b = 37$, so $np = 37.5$ and $npq = 9.375$.
 
@@ -583,9 +585,9 @@ $n = 50$, $p = 0.75$, $a = 36$, $b = 37$, so $np = 37.5$ and $npq = 9.375$.
 - with correction: $\Phi\left[\dfrac{37.5 - 37.5}{\sqrt{9.375}}\right] - \Phi\left[\dfrac{35.5 - 37.5}{\sqrt{9.375}}\right] = 0.2432$
 - exact binomial: $P(36 \leq X \leq 37) = 0.2371$
 
-### 3.4.3 Slutsky's theorem and the delta method
+## 3.4.3 Slutsky's theorem and the delta method
 
-#### Theorem 3.4.5 (Thm 3.15) — Slutsky's theorem
+### Theorem 3.4.5 — Slutsky's theorem
 
 If $X_n \xrightarrow{p} c$ for a constant $c$ and $Y_n \xrightarrow{d} Z$, then
 
@@ -604,7 +606,7 @@ $$P(Y_n \leq z - c - \epsilon) - P(|X_n - c| \geq \epsilon) \;\leq\; F_{Y_n + X_
 
 This holds for every $\epsilon > 0$, and both bounds converge to $P(Z \leq z - c) = P(Z + c \leq z)$ wherever $Z$ is continuous at $z - c$ (by $Y_n \xrightarrow{d} Z$ and $X_n \xrightarrow{p} c$). $\blacksquare$
 
-#### Example 3.4.5 (Ex 3.10) — limiting distribution of the studentized statistic
+### Example 3.4.5 — limiting distribution of the studentized statistic
 
 For a random sample from a population with mean $\mu$ and variance $\sigma^2 < \infty$ (no normality assumed): $S_n^2 \xrightarrow{p} \sigma^2$ (by Theorem 3.4.2), hence $S_n \xrightarrow{p} \sigma$ (since $\sqrt{\cdot}$ is continuous), and $(\bar{X}_n - \mu)/(\sigma/\sqrt{n}) \xrightarrow{d} N(0,1)$ (by Theorem 3.4.4). Therefore
 
@@ -612,7 +614,7 @@ $$\frac{\bar{X}_n - \mu}{S_n/\sqrt{n}} = \frac{\sigma}{S_n}\cdot\frac{\bar{X}_n 
 
 Combined with Theorem 3.3.4 this confirms that $t(n-1) \to N(0,1)$ as the degrees of freedom grow.
 
-#### Theorem 3.4.6 (Thm 3.16) — delta method
+### Theorem 3.4.6 — delta method
 
 If $\sqrt{n}(\bar{X}_n - \theta) \xrightarrow{d} N(0, \sigma^2)$ and $g'$ is continuous and nonzero at $\theta$, then
 
@@ -630,7 +632,7 @@ $$\sqrt{n}\left(g(\bar{X}_n) - g(\theta)\right) = g'(\tilde{\theta})\cdot\sqrt{n
 
 (by Theorem 3.4.5(2)) $\blacksquare$
 
-#### Example 3.4.6 (Ex 3.11) — variance stabilizing transformation
+### Example 3.4.6 — variance stabilizing transformation
 
 For a random sample from Poisson($\lambda$), $E(X_i) = \operatorname{Var}(X_i) = \lambda$, so
 
@@ -642,7 +644,7 @@ $$\sqrt{n}\left(\sqrt{\bar{X}_n} - \sqrt{\lambda}\right) \xrightarrow{d} N\!\lef
 
 The limiting variance no longer depends on $\lambda$: this is a **variance stabilizing transformation**.
 
-#### Theorem 3.4.7 — multivariate delta method: approximate mean and variance
+### Theorem 3.4.7 — multivariate delta method: approximate mean and variance
 
 For a random vector $X = (X_1, \dots, X_k)$ with $E(X) = \theta = (\theta_1, \dots, \theta_k)$,
 
@@ -654,7 +656,7 @@ $$\operatorname{Var} g(X) \approx \sum_{i=1}^{k}[g_i'(\theta)]^2\operatorname{Va
 
 (3.10) follows by expanding $\operatorname{Var} g(X) \approx E\left[\left(\sum_i g_i'(\theta)(X_i - \theta_i)\right)^2\right]$.
 
-#### Example 3.4.7 (Ex 3.12) — ratio-type estimator
+### Example 3.4.7 — ratio-type estimator
 
 Estimating $g(\mu_X, \mu_Y) = \dfrac{\mu_X}{\mu_Y}$ by $\dfrac{\bar{X}_n}{\bar{Y}_m}$, the partial derivatives are
 
@@ -688,7 +690,7 @@ Partition the sample space into the $n!$ disjoint regions on which the ordering 
 
 For an iid sample the density is invariant under permutation of its arguments, so all $n!$ regions contribute equally; summing them multiplies one region's density by $n!$, which gives (3.12). The boundaries $x_i = x_j$ have probability 0 in the continuous case, so strict and weak inequalities give the same density. $\blacksquare$
 
-### Example 3.5.1 (Ex 3.13) — joint density for $f(x) = 3x^2$
+### Example 3.5.1 — joint density for $f(x) = 3x^2$
 
 $X_1, X_2, X_3$ a random sample from $f(x) = 3x^2$, $0 < x < 1$; for $0 < x_{(1)} < x_{(2)} < x_{(3)} < 1$,
 
@@ -696,7 +698,7 @@ $$g(x_{(1)}, x_{(2)}, x_{(3)}) = 3!\,(3x_{(1)}^2)(3x_{(2)}^2)(3x_{(3)}^2) = 162\
 
 and 0 otherwise.
 
-### Theorem 3.5.2 (Thm 3.17) — density of the $k$-th order statistic
+### Theorem 3.5.2 — density of the $k$-th order statistic
 
 For a population with density $f$ and cdf $F$, with $f(x) > 0$ on $a < x < b$:
 
@@ -726,7 +728,7 @@ $$f_{X_{(1)}}(x) = \frac{d}{dx}G_1(x) = n[1 - F(x)]^{n-1}f(x) \tag{3.13}$$
 
 $$f_{X_{(n)}}(x) = \frac{d}{dx}G_n(x) = n[F(x)]^{n-1}f(x) \tag{3.14}$$
 
-### Example 3.5.2 (Ex 3.14) — minimum of an exponential sample
+### Example 3.5.2 — minimum of an exponential sample
 
 For a random sample from $f(x) = \dfrac{1}{\lambda}e^{-x/\lambda}$, $x > 0$, we have $F(x) = 1 - e^{-x/\lambda}$, so
 
