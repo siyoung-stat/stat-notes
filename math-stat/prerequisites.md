@@ -4,15 +4,15 @@
 
 ---
 
-## 0.1 극한과 성장 속도
+## 0.1 극한과 성장 속도 <sub>limits & growth</sub>
 
-### 지수·로그 함수
+### 지수·로그 함수 <sub>exponential & logarithm</sub>
 
 **정의.** $e^x=\displaystyle\lim_{n\to\infty}\Big(1+\frac{x}{n}\Big)^n=\sum_{k=0}^{\infty}\frac{x^k}{k!}$, $\;(e^{ax})'=a\,e^{ax}$, $\;\displaystyle\int e^{ax}\,dx=\frac{1}{a}e^{ax}$. $\ln x$ 는 $e^x$ 의 역함수, $(\ln x)'=\tfrac1x$.
 
 포아송 근사의 $\Big(1-\dfrac{\lambda}{n}\Big)^n\to e^{-\lambda}$ 가 위 극한 정의에서 나온다.
 
-### 로피탈 정리
+### 로피탈 정리 <sub>L'Hôpital's rule</sub>
 
 **정리.** $x\to a$ ($a$ 는 유한값 또는 $\pm\infty$)에서 $\dfrac{f(x)}{g(x)}$ 가 $\dfrac00$ 또는 $\dfrac{\infty}{\infty}$ 꼴이고, $a$ 근방에서 $f,g$ 가 미분가능($g'\ne0$)하며 $\displaystyle\lim\frac{f'}{g'}$ 가 존재하면
 
@@ -28,7 +28,7 @@ $x\to a$ 이면 $c$ 가 사이에 끼여 $c\to a$. $\blacksquare$
 
 $0\cdot\infty,\ \infty-\infty,\ 1^\infty$ 는 먼저 $\dfrac00$ 또는 $\dfrac\infty\infty$ 꼴로 바꾼 뒤 적용한다.
 
-### 성장 속도
+### 성장 속도 <sub>growth rates</sub>
 
 **정리.** 임의의 고정된 $n$ 에 대해
 
@@ -40,7 +40,7 @@ $$\lim_{x\to\infty}\frac{x^n}{e^x}=0,\qquad \ln x\ \ll\ x^a\ \ll\ e^x\quad(a\gt0
 
 ---
 
-## 0.2 적분 기법
+## 0.2 적분 기법 <sub>integration techniques</sub>
 
 ### 미적분의 기본정리 (FTC)
 
@@ -50,7 +50,7 @@ $$\frac{d}{dx}\int_a^x f(t)\,dt=f(x).$$
 
 **증명 (개요).** $A(x)=\int_a^x f$ 라 하면 $A(x+h)-A(x)=\int_x^{x+h}f$. $f$ 가 연속이면 적분의 평균값정리로 이 값이 $f(\xi)h$ ($\xi\in[x,x+h]$)이므로 $\dfrac{A(x+h)-A(x)}{h}=f(\xi)\to f(x)$. $\blacksquare$
 
-### 부분적분
+### 부분적분 <sub>integration by parts</sub>
 
 $$\int u\,dv = uv-\int v\,du.$$
 
@@ -60,7 +60,7 @@ $$\int u\,dv = uv-\int v\,du.$$
 
 **예.** $u=x,\ dv=e^{-x}dx$ 로 $\int_0^\infty xe^{-x}dx=\big[-xe^{-x}\big]_0^\infty+\int_0^\infty e^{-x}dx=1$ (경계항은 성장속도로 $0$). 반복하면 $\int_0^\infty x^n e^{-x}dx=n!$.
 
-### <a name="change-of-variables"></a>다변수 변수변환 (야코비안)
+### <a name="change-of-variables"></a>다변수 변수변환 <sub>change of variables</sub>
 
 $(x,y)\to(u,v)$ 일대일 변환에서
 
@@ -70,11 +70,11 @@ $$\iint_R f(x,y)\,dx\,dy=\iint_{R'} f\big(x(u,v),y(u,v)\big)\,|J|\,du\,dv,\qquad
 
 ---
 
-## 0.3 감마·베타·가우스 적분
+## 0.3 감마·베타·가우스 적분 <sub>special integrals</sub>
 
 감마·베타분포와 정규분포의 정규화 상수가 모두 여기서 나온다.
 
-### 감마함수
+### 감마함수 <sub>gamma function</sub>
 
 **정의.**
 
@@ -94,7 +94,7 @@ $$\Gamma(k)=\big[-t^{k-1}e^{-t}\big]_0^\infty+(k-1)\int_0^\infty t^{k-2}e^{-t}dt
 
 (경계항은 $0$). $\Gamma(1)=1$ 이므로 $\Gamma(n)=(n-1)!$. (3)은 가우스 적분에서 따라온다. $\blacksquare$
 
-### 베타함수
+### 베타함수 <sub>beta function</sub>
 
 **정의.**
 
@@ -106,7 +106,7 @@ $[0,1]$ 위 적분이라 베타분포의 정규화 상수가 된다.
 
 $$\Gamma(a)\Gamma(b)=\underbrace{\int_0^\infty t^{a+b-1}e^{-t}dt}_{\Gamma(a+b)}\;\underbrace{\int_0^1 s^{a-1}(1-s)^{b-1}ds}_{B(a,b)}. \qquad \blacksquare$$
 
-### 가우스 적분
+### 가우스 적분 <sub>Gaussian integral</sub>
 
 **정리.**
 
@@ -130,9 +130,9 @@ $$\Gamma(\tfrac12)=\sqrt2\int_0^\infty e^{-u^2/2}du=\sqrt2\cdot\tfrac{\sqrt{2\pi
 
 ---
 
-## 0.4 급수와 테일러 전개
+## 0.4 급수와 테일러 전개 <sub>series & Taylor</sub>
 
-### 등비급수와 지수급수
+### 등비급수와 지수급수 <sub>geometric & exponential series</sub>
 
 **등비급수.** 첫째항 $a$, 공비 $r$:
 
@@ -152,7 +152,7 @@ $$e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}\quad(\text{모든 }x).$$
 
 포아송분포의 정규화 $\sum_x e^{-\lambda}\lambda^x/x!=1$ 에 쓰인다.
 
-### 테일러 급수
+### 테일러 급수 <sub>Taylor series</sub>
 
 **정의.** $f$ 가 $a$ 근방에서 무한번 미분가능할 때, $n$ 차 테일러 다항식과 테일러 급수는
 
@@ -188,25 +188,25 @@ $$f(x)=\sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n\ \iff\ \lim_{n\to\infty}R
 
 ---
 
-## 0.5 다변량 미분과 그라디언트
+## 0.5 다변량 미분과 그라디언트 <sub>multivariable differentiation</sub>
 
-### 편도함수
+### 편도함수 <sub>partial derivative</sub>
 
 **정의.** 나머지 변수를 고정하고 한 변수로만 미분한 것:
 
 $$\frac{\partial f}{\partial x_i}=\lim_{h\to0}\frac{f(\dots,x_i+h,\dots)-f(\dots,x_i,\dots)}{h}.$$
 
-### 그라디언트
+### 그라디언트 <sub>gradient</sub>
 
 **정의.** 편도함수를 모은 벡터
 
 $$\nabla f=\Big(\frac{\partial f}{\partial x_1},\ \dots,\ \frac{\partial f}{\partial x_n}\Big).$$
 
-단위벡터 $\mathbf u$ 방향의 방향도함수는 $D_{\mathbf u}f=\nabla f\cdot\mathbf u$. $\nabla f$ 는 등고선에 수직이며 함숫값이 가장 빠르게 커지는 방향을 가리킨다.
+단위벡터 $\mathbf u$ 방향의 방향도함수(directional derivative)는 $D_{\mathbf u}f=\nabla f\cdot\mathbf u$. $\nabla f$ 는 등고선에 수직이며 함숫값이 가장 빠르게 커지는 방향을 가리킨다.
 
 극대·극소에서는 $\nabla f=\mathbf 0$ (임계점). 가능도함수의 $\nabla=\mathbf0$ 을 푸는 것이 MLE다.
 
-### 헤시안과 연쇄법칙
+### 헤시안과 연쇄법칙 <sub>Hessian & chain rule</sub>
 
 **헤시안.** $H=\Big[\dfrac{\partial^2 f}{\partial x_i\,\partial x_j}\Big]$. 임계점에서 양의정부호면 극소, 음의정부호면 극대.
 
@@ -214,7 +214,7 @@ $$\nabla f=\Big(\frac{\partial f}{\partial x_1},\ \dots,\ \frac{\partial f}{\par
 
 $$\frac{d}{dt}f(x(t),y(t))=\frac{\partial f}{\partial x}x'(t)+\frac{\partial f}{\partial y}y'(t)=\nabla f\cdot(x',y').$$
 
-### 야코비 행렬
+### 야코비 행렬 <sub>Jacobian matrix</sub>
 
 **정의.** $\mathbf g:\mathbb R^n\to\mathbb R^n$ 의 1차 도함수 행렬과 그 행렬식:
 
@@ -224,23 +224,23 @@ $|\det A|$ 는 선형사상 $A$ 가 부피를 늘리는 배율이고, 비선형 
 
 ---
 
-## 0.6 삼각부등식
+## 0.6 삼각부등식 <sub>triangle inequality</sub>
 
 합의 크기는 크기의 합을 넘지 못한다. 기댓값의 존재($E|X|\lt\infty$)와 여러 부등식 증명의 바탕.
 
-### 실수와 벡터
+### 실수와 벡터 <sub>numbers & vectors</sub>
 
 $$|a+b|\le|a|+|b|\qquad(\text{벡터}:\ \|\mathbf x+\mathbf y\|\le\|\mathbf x\|+\|\mathbf y\|).$$
 
 **증명.** $-|a|\le a\le|a|$, $-|b|\le b\le|b|$ 를 더하면 $-(|a|+|b|)\le a+b\le|a|+|b|$. (벡터는 $\|\mathbf x+\mathbf y\|^2\le(\|\mathbf x\|+\|\mathbf y\|)^2$ 를 코시–슈바르츠 $\mathbf x\cdot\mathbf y\le\|\mathbf x\|\|\mathbf y\|$ 로 보인다.) $\blacksquare$
 
-**역삼각부등식.**
+**역삼각부등식**(reverse triangle inequality)**.**
 
 $$\big|\,|a|-|b|\,\big|\le|a-b|.$$
 
 **증명.** $|a|=|(a-b)+b|\le|a-b|+|b|$ 에서 $|a|-|b|\le|a-b|$. $a,b$ 를 바꿔 합치면 결론. $\blacksquare$
 
-### 적분·기댓값 형태
+### 적분·기댓값 형태 <sub>integral & expectation forms</sub>
 
 $$\Big|\int f(x)\,dx\Big|\le\int|f(x)|\,dx,\qquad |E(X)|\le E\big(|X|\big).$$
 
@@ -248,7 +248,7 @@ $$\Big|\int f(x)\,dx\Big|\le\int|f(x)|\,dx,\qquad |E(X)|\le E\big(|X|\big).$$
 
 ---
 
-## 0.7 이차식과 판별식
+## 0.7 이차식과 판별식 <sub>quadratic & discriminant</sub>
 
 **정의.** 이차식 $at^2+bt+c$ ($a\ne0$) 의 판별식은 $D=b^2-4ac$.
 
@@ -256,6 +256,6 @@ $$\Big|\int f(x)\,dx\Big|\le\int|f(x)|\,dx,\qquad |E(X)|\le E\big(|X|\big).$$
 
 $$at^2+bt+c\ge0\ \ (\text{모든 } t)\iff D\le0.$$
 
-**활용 — 코시–슈바르츠.** $0\le E[(tX-Y)^2]=t^2E(X^2)-2t\,E(XY)+E(Y^2)$ 가 모든 $t$ 에서 성립하므로 판별식이 $\le0$:
+**활용 — 코시–슈바르츠**(Cauchy–Schwarz)**.** $0\le E[(tX-Y)^2]=t^2E(X^2)-2t\,E(XY)+E(Y^2)$ 가 모든 $t$ 에서 성립하므로 판별식이 $\le0$:
 
 $$[E(XY)]^2\le E(X^2)E(Y^2).$$
