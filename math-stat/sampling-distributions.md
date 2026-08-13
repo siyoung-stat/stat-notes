@@ -1,13 +1,13 @@
-# 3. 표본분포와 근사 <sub>sampling distributions and their approximations</sub>
+# 3. 표본분포와 근사 (sampling distributions and their approximations)
 
-## 3.1 모집단과 표본 <sub>population and sample</sub>
+## 3.1 모집단과 표본 (population and sample)
 
-### <a name="def-3-1-1"></a>정의 3.1.1 — 모집단, 표본 <sub>population, sample</sub>
+### <a name="def-3-1-1"></a>정의 3.1.1 — 모집단, 표본 (population, sample)
 
 - **모집단**: 연구 대상 전체
 - **표본**: 실제로 관측된 모집단의 일부
 
-### <a name="def-3-1-2"></a>정의 3.1.2 — 확률표본 <sub>random sample</sub>
+### <a name="def-3-1-2"></a>정의 3.1.2 — 확률표본 (random sample)
 
 결합밀도가 $f$ 의 곱으로 분해되면 $X_1, \dots, X_n$ 을 밀도 $f$ 인 모집단에서 뽑은 크기 $n$ 의 **확률표본**이라 한다.
 
@@ -15,13 +15,13 @@ $$f_{X_1,\dots,X_n}(x_1, \dots, x_n) = f(x_1)f(x_2)\cdots f(x_n) = \prod_{i=1}^{
 
 즉 $X_i$ 는 **iid**(independent and identically distributed, 독립이고 동일한 분포)이다.
 
-### <a name="ex-3-1-1"></a>예 3.1.1 — 베르누이 모집단 <sub>Bernoulli population</sub>
+### <a name="ex-3-1-1"></a>예 3.1.1 — 베르누이 모집단 (Bernoulli population)
 
 $f(x) = p^x q^{1-x}$, $x = 0, 1$, $p + q = 1$, $n = 10$:
 
 $$f_{X_1,\dots,X_{10}}(x_1, \dots, x_{10}) = \prod_{i=1}^{10} p^{x_i} q^{1-x_i} = p^{\sum x_i} q^{10 - \sum x_i} \qquad \text{(독립성)}$$
 
-### <a name="def-3-1-3"></a>정의 3.1.3 — 통계량 <sub>statistic</sub>
+### <a name="def-3-1-3"></a>정의 3.1.3 — 통계량 (statistic)
 
 **통계량**은 미지의 모수를 포함하지 않는 확률표본의 함수 $T = T(X_1, \dots, X_n)$ 이다. 확률변수의 함수이므로 $T$ 자신도 확률변수다.
 
@@ -32,12 +32,12 @@ $$f_{X_1,\dots,X_{10}}(x_1, \dots, x_{10}) = \prod_{i=1}^{10} p^{x_i} q^{1-x_i} 
 - 통계량: $\displaystyle \bar{X}_n = \frac{1}{n}\sum_{i=1}^{n} X_i$, $\quad \max\{X_1, \dots, X_n\}$
 - 통계량 아님: $\bar{X}_n - \theta$, $\quad \max\{X_1/\theta, \dots, X_n/\theta\}$
 
-### <a name="def-3-1-4"></a>정의 3.1.4 — 표본적률 <sub>sample moments</sub>
+### <a name="def-3-1-4"></a>정의 3.1.4 — 표본적률 (sample moments)
 
 - $r$ 차 표본적률: $\displaystyle m_r' = \frac{1}{n}\sum_{i=1}^{n} X_i^r$
 - $r$ 차 중심표본적률: $\displaystyle m_r = \frac{1}{n}\sum_{i=1}^{n} (X_i - \bar{X}_n)^r$
 
-### <a name="def-3-1-5"></a>정의 3.1.5 — 표본평균, 표본분산 <sub>sample mean, sample variance</sub>
+### <a name="def-3-1-5"></a>정의 3.1.5 — 표본평균, 표본분산 (sample mean, sample variance)
 
 - 표본평균: $\displaystyle \bar{X}_n = \frac{1}{n}\sum_{i=1}^{n} X_i \;\; (= m_1')$
 - 표본분산: $\displaystyle S_n^2 = \frac{1}{n-1}\sum_{i=1}^{n} (X_i - \bar{X}_n)^2$
@@ -114,11 +114,11 @@ $$\therefore\; \mathrm{Var}(S_n^2) = \frac{E(W^2)}{(n-1)^2} - \sigma^4 = \frac{\
 
 ---
 
-## 3.2 정규분포와 관련된 분포 <sub>distributions related to the normal</sub>
+## 3.2 정규분포와 관련된 분포 (distributions related to the normal)
 
-## 3.2.1 카이제곱분포 <sub>chi-squared distribution</sub>
+## 3.2.1 카이제곱분포 (chi-squared distribution)
 
-### <a name="def-3-2-1"></a>정의 3.2.1 — 카이제곱분포 <sub>chi-squared distribution</sub>
+### <a name="def-3-2-1"></a>정의 3.2.1 — 카이제곱분포 (chi-squared distribution)
 
 모수가 $(k, \theta) = (n/2, 2)$ 인 감마분포를 자유도 $n$ 의 **카이제곱분포**라 하고 $X \sim \chi^2(n)$ 으로 쓴다.
 
@@ -136,7 +136,7 @@ $$M_X(t) = (1 - 2t)^{-n/2}$$
 
 $$E(X) = k\theta = \frac{n}{2}\cdot 2 = n, \qquad \mathrm{Var}(X) = k\theta^2 = \frac{n}{2}\cdot 2^2 = 2n \qquad \blacksquare$$
 
-### <a name="thm-3-2-2"></a>정리 3.2.2 — 카이제곱분포의 가법성 <sub>additivity</sub>
+### <a name="thm-3-2-2"></a>정리 3.2.2 — 카이제곱분포의 가법성 (additivity)
 
 독립인 $X_i \sim \chi^2(k_i)$, $i = 1, \dots, n$ 에 대해
 
@@ -177,9 +177,9 @@ $N(\mu, \sigma^2)$ 에서 뽑은 확률표본에 대해
 
 $$\sum_{i=1}^{n}\frac{(X_i - \mu)^2}{\sigma^2} \;\sim\; \chi^2(n)$$
 
-## 3.2.2 F분포 <sub>F distribution</sub>
+## 3.2.2 F분포 (F distribution)
 
-### <a name="def-3-2-2"></a>정의 3.2.2 — F분포 <sub>F distribution</sub>
+### <a name="def-3-2-2"></a>정의 3.2.2 — F분포 (F distribution)
 
 독립인 $U \sim \chi^2(n)$, $V \sim \chi^2(m)$ 에 대해
 
@@ -239,7 +239,7 @@ $$\mathrm{Var}(X) = E(X^2) - [E(X)]^2 = \frac{m^2(n+2)}{n(m-2)(m-4)} - \frac{m^2
 
 (분자: $(n+2)(m-2) - n(m-4) = 2(n + m - 2)$) $\blacksquare$
 
-### <a name="thm-3-2-6"></a>정리 3.2.6 — F 확률변수의 역수와 백분위수 관계 <sub>reciprocal, percentile relation</sub>
+### <a name="thm-3-2-6"></a>정리 3.2.6 — F 확률변수의 역수와 백분위수 관계 (reciprocal, percentile relation)
 
 $1/X = \dfrac{V/m}{U/n}$ 이므로 $X \sim F(n, m) \Rightarrow 1/X \sim F(m, n)$. 따라서 상위 백분위수에 대해
 
@@ -253,9 +253,9 @@ $X \sim F(5, 10)$ 이고 $P(X \leq a) = 0.01$ 일 때
 
 $$a = F_{0.99}(5,10) = \frac{1}{F_{0.01}(10,5)} = \frac{1}{10.1} = 0.099 \qquad \text{((3.4)와 F분포표)}$$
 
-## 3.2.3 t분포 <sub>t distribution</sub>
+## 3.2.3 t분포 (t distribution)
 
-### <a name="def-3-2-3"></a>정의 3.2.3 — t분포 <sub>t distribution</sub>
+### <a name="def-3-2-3"></a>정의 3.2.3 — t분포 (t distribution)
 
 $Z \sim N(0,1)$ 과 독립인 $U \sim \chi^2(k)$ 에 대해
 
@@ -318,7 +318,7 @@ $$X^2 = \frac{Z^2}{U/n} = \frac{Z^2/1}{U/n}$$
 
 에서 $Z^2 \sim \chi^2(1)$ ([정리 3.2.3](#thm-3-2-3))이 $U \sim \chi^2(n)$ 과 독립이므로, 이는 곧 $F(1, n)$ 의 정의 (3.2)이다. $\blacksquare$
 
-### <a name="not-3-2-1"></a>표기 3.2.1 — 상위 백분위수 <sub>upper percentiles</sub>
+### <a name="not-3-2-1"></a>표기 3.2.1 — 상위 백분위수 (upper percentiles)
 
 상위 꼬리확률이 $\alpha$ 인 점을 다음과 같이 쓴다.
 
@@ -333,7 +333,7 @@ $$z_{1-\alpha} = -z_{\alpha}, \qquad t_{1-\alpha}(n) = -t_{\alpha}(n)$$
 
 ---
 
-## 3.3 정규모집단에서의 표본추출 <sub>sampling from a normal distribution</sub>
+## 3.3 정규모집단에서의 표본추출 (sampling from a normal distribution)
 
 ### <a name="thm-3-3-1"></a>정리 3.3.1 — 독립인 정규확률변수의 합
 
@@ -424,7 +424,7 @@ $$F = \frac{[(n-1)S_X^2/\sigma_X^2]/(n-1)}{[(m-1)S_Y^2/\sigma_Y^2]/(m-1)} = \fra
 
 특히 $\sigma_X^2 = \sigma_Y^2$ 이면 $S_X^2/S_Y^2 \sim F(n-1, m-1)$ 이고, 이것이 두 분산의 동일성 검정의 근거다.
 
-### <a name="thm-3-3-4"></a>정리 3.3.4 — 스튜던트화된 t 통계량 <sub>studentized t statistic</sub>
+### <a name="thm-3-3-4"></a>정리 3.3.4 — 스튜던트화된 t 통계량 (studentized t statistic)
 
 $N(\mu, \sigma^2)$ 에서 뽑은 확률표본에 대해 $S_n = \sqrt{S_n^2}$ 이라 하면
 
@@ -444,17 +444,17 @@ $$T = \frac{Z}{\sqrt{U/(n-1)}} = \frac{\sqrt{n}(\bar{X}_n - \mu)/\sigma}{\sqrt{[
 
 ---
 
-## 3.4 대수의 법칙과 중심극한정리 <sub>law of large numbers and central limit theorem</sub>
+## 3.4 대수의 법칙과 중심극한정리 (law of large numbers and central limit theorem)
 
-## 3.4.1 대수의 법칙 <sub>law of large numbers</sub>
+## 3.4.1 대수의 법칙 (law of large numbers)
 
-### <a name="def-3-4-1"></a>정의 3.4.1 — 확률수렴 <sub>convergence in probability</sub>
+### <a name="def-3-4-1"></a>정의 3.4.1 — 확률수렴 (convergence in probability)
 
 $$\lim_{n\to\infty} P(|X_n - X| \geq \epsilon) = 0 \;\text{ (모든 } \epsilon > 0) \quad \Longleftrightarrow \quad X_n \xrightarrow{p} X$$
 
 동치로 $\lim_{n\to\infty} P(|X_n - X| < \epsilon) = 1$.
 
-### <a name="thm-3-4-1"></a>정리 3.4.1 — 대수의 법칙 <sub>law of large numbers</sub>
+### <a name="thm-3-4-1"></a>정리 3.4.1 — 대수의 법칙 (law of large numbers)
 
 평균 $\mu < \infty$ 인 모집단에서 뽑은 확률표본에 대해
 
@@ -466,7 +466,7 @@ $$P[|\bar{X}_n - \mu| < \epsilon] \geq 1 - \frac{E(\bar{X}_n - \mu)^2}{\epsilon^
 
 ($\because$ 체비셰프 부등식(Chebyshev)과 $E(\bar{X}_n - \mu)^2 = \mathrm{Var}(\bar{X}_n) = \sigma^2/n$, [정리 3.1.1](#thm-3-1-1)). $\blacksquare$
 
-### <a name="thm-3-4-2"></a>정리 3.4.2 — 표본분산의 확률수렴 <sub>convergence in probability</sub>
+### <a name="thm-3-4-2"></a>정리 3.4.2 — 표본분산의 확률수렴 (convergence in probability)
 
 $E(X_1^4) < \infty$ 이면
 
@@ -484,27 +484,27 @@ $$P[|S_n^2 - \sigma^2| \geq \epsilon] \leq \frac{\mathrm{Var}(S_n^2)}{\epsilon^2
 
 $$\hat{p}_n = \frac{1}{n}\sum_{i=1}^{n} X_i \xrightarrow{p} p \qquad \text{(정리 3.4.1)}$$
 
-## 3.4.2 중심극한정리 <sub>central limit theorem</sub>
+## 3.4.2 중심극한정리 (central limit theorem)
 
-### <a name="def-3-4-2"></a>정의 3.4.2 — 분포수렴 <sub>convergence in distribution</sub>
+### <a name="def-3-4-2"></a>정의 3.4.2 — 분포수렴 (convergence in distribution)
 
 $$\lim_{n\to\infty} F_{X_n}(x) = F_X(x) \;\text{ ($F_X$ 의 모든 연속점에서)} \quad \Longleftrightarrow \quad X_n \xrightarrow{d} X$$
 
 수렴하는 것은 확률변수가 아니라 **cdf**이며, $F_X$ 의 연속점에서만 요구한다.
 
-### <a name="thm-3-4-3"></a>정리 3.4.3 — 연속성 정리 <sub>continuity theorem</sub>
+### <a name="thm-3-4-3"></a>정리 3.4.3 — 연속성 정리 (continuity theorem)
 
 열린구간 $-h < t < h$ 에서 $\lim_{n\to\infty} M_n(t) = M(t)$ 이고 $M(t)$ 가 cdf $F$ 를 갖는 분포의 적률생성함수이면, $F$ 의 모든 연속점에서 $\lim_{n\to\infty} F_n(x) = F(x)$ 이다.
 
 이산형에서는 확률생성함수를 대신 쓸 수 있다. $0 \leq s < 1$ 에서 $\lim_n G_n(s) = G(s)$ 이면 $\lim_n P(X_n = k) = a_k$ 이며, 여기서 $G(s) = \sum_k a_k s^k$.
 
-### <a name="thm-3-4-4"></a>정리 3.4.4 — 중심극한정리 <sub>central limit theorem</sub>
+### <a name="thm-3-4-4"></a>정리 3.4.4 — 중심극한정리 (central limit theorem)
 
 평균 $\mu$, 분산 $\sigma^2 < \infty$ 인 모집단에서 뽑은 확률표본에 대해
 
 $$Z_n = \frac{\sum_{i=1}^{n} X_i - E\left(\sum_{i=1}^{n} X_i\right)}{\sqrt{\mathrm{Var}\left(\sum_{i=1}^{n} X_i\right)}} = \frac{\sum_{i=1}^{n}(X_i - \mu)}{\sqrt{n}\,\sigma} \xrightarrow{d} N(0,1)$$
 
-### <a name="lem-3-4-1"></a>보조정리 3.4.1 — 1차 나머지의 라그랑주형 <sub>Lagrange form of the remainder</sub>
+### <a name="lem-3-4-1"></a>보조정리 3.4.1 — 1차 나머지의 라그랑주형 (Lagrange form of the remainder)
 
 $f$ 가 $a$ 를 포함하는 열린구간에서 두 번 미분가능하다 하고, 나머지를 1차 근사가 놓치는 부분으로 정의하면
 
@@ -578,7 +578,7 @@ $X \sim B(n, p)$ 는 독립인 베르누이($p$) 확률변수의 합 $\sum_{i=1}
 
 $$P[a \leq X \leq b] \approx \Phi\left[\frac{b - np}{\sqrt{npq}}\right] - \Phi\left[\frac{a - np}{\sqrt{npq}}\right] \qquad \text{(정리 3.4.4)}$$
 
-### <a name="def-3-4-3"></a>정의 3.4.3 — 연속성 수정 <sub>continuity correction</sub>
+### <a name="def-3-4-3"></a>정의 3.4.3 — 연속성 수정 (continuity correction)
 
 $P(X = k)$ 는 $k$ 를 중심으로 하는 폭 $1$ 인 막대의 넓이인데 정규근사는 곡선을 적분한다. 적분 구간을 정수 $a, b$ (막대의 중심)로 잡으면 양 끝 막대의 바깥쪽 절반이 잘린다. 각 끝을 $\tfrac{1}{2}$ 씩 늘리면 막대 전체를 덮는다:
 
@@ -594,9 +594,9 @@ $n = 50$, $p = 0.75$, $a = 36$, $b = 37$ 이면 $np = 37.5$, $npq = 9.375$.
 - 수정 적용: $\Phi\left[\dfrac{37.5 - 37.5}{\sqrt{9.375}}\right] - \Phi\left[\dfrac{35.5 - 37.5}{\sqrt{9.375}}\right] = 0.2432$
 - 이항분포 정확값: $P(36 \leq X \leq 37) = 0.2371$
 
-## 3.4.3 슬러츠키 정리와 델타방법 <sub>Slutsky's theorem and the delta method</sub>
+## 3.4.3 슬러츠키 정리와 델타방법 (Slutsky's theorem and the delta method)
 
-### <a name="thm-3-4-5"></a>정리 3.4.5 — 슬러츠키 정리 <sub>Slutsky's theorem</sub>
+### <a name="thm-3-4-5"></a>정리 3.4.5 — 슬러츠키 정리 (Slutsky's theorem)
 
 상수 $c$ 에 대해 $X_n \xrightarrow{p} c$ 이고 $Y_n \xrightarrow{d} Z$ 이면
 
@@ -623,7 +623,7 @@ $$\frac{\bar{X}_n - \mu}{S_n/\sqrt{n}} = \frac{\sigma}{S_n}\cdot\frac{\bar{X}_n 
 
 [정리 3.3.4](#thm-3-3-4)와 함께 보면 자유도가 커질수록 $t(n-1) \to N(0,1)$ 임을 확인해 준다.
 
-### <a name="thm-3-4-6"></a>정리 3.4.6 — 델타방법 <sub>delta method</sub>
+### <a name="thm-3-4-6"></a>정리 3.4.6 — 델타방법 (delta method)
 
 $\sqrt{n}(\bar{X}_n - \theta) \xrightarrow{d} N(0, \sigma^2)$ 이고 $g'$ 이 $\theta$ 에서 연속이며 $0$ 이 아니면
 
@@ -646,7 +646,7 @@ $$\sqrt{n}\left(g(\bar{X}_n) - g(\theta)\right) = g'(\tilde{\theta})\cdot\sqrt{n
 
 ([정리 3.4.5](#thm-3-4-5)(2)) $\blacksquare$
 
-### <a name="ex-3-4-6"></a>예 3.4.6 — 분산안정화 변환 <sub>variance stabilizing transformation</sub>
+### <a name="ex-3-4-6"></a>예 3.4.6 — 분산안정화 변환 (variance stabilizing transformation)
 
 포아송($\lambda$)에서 뽑은 확률표본은 $E(X_i) = \mathrm{Var}(X_i) = \lambda$ 이므로
 
@@ -658,7 +658,7 @@ $$\sqrt{n}\left(\sqrt{\bar{X}_n} - \sqrt{\lambda}\right) \xrightarrow{d} N\!\lef
 
 극한분산이 더 이상 $\lambda$ 에 의존하지 않는다. 이를 **분산안정화 변환**(variance stabilizing transformation)이라 한다.
 
-### <a name="thm-3-4-7"></a>정리 3.4.7 — 다변량 델타방법 <sub>multivariate delta method</sub>: 근사 평균과 분산
+### <a name="thm-3-4-7"></a>정리 3.4.7 — 다변량 델타방법 (multivariate delta method): 근사 평균과 분산
 
 $E(X) = \theta = (\theta_1, \dots, \theta_k)$ 인 확률벡터 $X = (X_1, \dots, X_k)$ 에 대해
 
@@ -689,9 +689,9 @@ $$= \left(\frac{\mu_X}{\mu_Y}\right)^2\left(\frac{\mathrm{Var}(\bar{X}_n)}{\mu_X
 
 ---
 
-## 3.5 순서통계량 <sub>order statistics</sub>
+## 3.5 순서통계량 (order statistics)
 
-### <a name="def-3-5-1"></a>정의 3.5.1 — 순서통계량 <sub>order statistics</sub>
+### <a name="def-3-5-1"></a>정의 3.5.1 — 순서통계량 (order statistics)
 
 확률표본 $X_1, \dots, X_n$ 을 크기순으로 배열한 것:
 
@@ -717,7 +717,7 @@ $$g(x_{(1)}, x_{(2)}, x_{(3)}) = 3!\,(3x_{(1)}^2)(3x_{(2)}^2)(3x_{(3)}^2) = 162\
 
 이고 그 외에서는 $0$ 이다.
 
-### <a name="thm-3-5-2"></a>정리 3.5.2 — $k$ 번째 순서통계량의 밀도 <sub>$k$-th order statistic</sub>
+### <a name="thm-3-5-2"></a>정리 3.5.2 — $k$ 번째 순서통계량의 밀도 ($k$-th order statistic)
 
 밀도 $f$, cdf $F$ 이고 $a < x < b$ 에서 $f(x) > 0$ 인 모집단에 대해
 
@@ -738,7 +738,7 @@ f_{X_{(i)}, X_{(j)}}(x_{(i)}, x_{(j)}) = \frac{n!}{(i-1)!\,(j-i-1)!\,(n-j)!} &[F
 \end{aligned}
 $$
 
-### <a name="thm-3-5-3"></a>정리 3.5.3 — 표본최솟값과 표본최댓값 <sub>sample minimum and maximum</sub>
+### <a name="thm-3-5-3"></a>정리 3.5.3 — 표본최솟값과 표본최댓값 (sample minimum and maximum)
 
 cdf는 정의에서 바로 따라온다:
 
@@ -760,7 +760,7 @@ $$f_{X_{(1)}}(x) = n\left[1 - (1 - e^{-x/\lambda})\right]^{n-1}\frac{1}{\lambda}
 
 즉 $X_{(1)}$ 은 평균 $\lambda/n$ 인 지수분포를 따른다.
 
-### <a name="def-3-5-2"></a>정의 3.5.2 — 표본중앙값, 표본범위 <sub>sample median, sample range</sub>
+### <a name="def-3-5-2"></a>정의 3.5.2 — 표본중앙값, 표본범위 (sample median, sample range)
 
 **표본중앙값**(sample median)은 가운데 순서통계량이며 위치를 나타낸다:
 
