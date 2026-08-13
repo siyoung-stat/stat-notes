@@ -5,7 +5,7 @@
 
 ## 수리통계
 - [기초 지식](math-stat/prerequisites.md) — 로피탈·성장속도, 감마·베타·가우스 적분, 테일러 전개, 야코비안, 삼각부등식, 판별식
-- [표본분포와 근사](math-stat/sampling-distributions.md) — 카이제곱·t·F 분포 유도, X̄과 S²의 독립성, LLN/CLT
+- [표본분포와 근사](math-stat/sampling-distributions.md) — 카이제곱·t·F 분포 유도, X̄과 S²의 독립성, 대수의 법칙과 중심극한정리, 순서통계량
 
 ## 선형대수
 - 작성 중
