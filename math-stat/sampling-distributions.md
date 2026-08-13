@@ -1,6 +1,4 @@
-# Sampling Distributions and Their Approximations
-
-> 송성주·전명식, 『수리통계학』 제5판(자유아카데미, 2020) 3장 학습 노트
+# 3. Sampling Distributions and Their Approximations
 
 ## 3.1 Population and Sample
 
