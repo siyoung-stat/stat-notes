@@ -4,6 +4,7 @@
 손글씨 노트를 스캔해 LaTeX으로 조판했으며, 조판 과정에 AI 도구를 사용했습니다.
 
 ## 수리통계
+- [기초 지식](math-stat/prerequisites.md) — 로피탈·성장속도, 감마·베타·가우스 적분, 테일러 전개, 야코비안, 삼각부등식, 판별식
 - [표본분포와 근사](math-stat/sampling-distributions.md) — 카이제곱·t·F 분포 유도, X̄과 S²의 독립성, LLN/CLT
 
 ## 회귀분석
